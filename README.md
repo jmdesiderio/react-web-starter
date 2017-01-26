@@ -105,6 +105,8 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 Now you're ready to rumble!
 
+> If you encounter an error when running `yarn run test:watch` use `brew install watchman`
+
 > Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
 
 ## Documentation
