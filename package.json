@@ -1,175 +1,52 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.4.0",
+  "name": "react-web-starter",
+  "version": "0.0.1",
   "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/jmdesiderio/react-web-starter.git"
   },
   "engines": {
-    "npm": ">=3",
-    "node": ">=5"
+    "npm": ">=4",
+    "node": ">=7"
   },
-  "author": "Max Stoiber",
+  "author": "Jason Desiderio",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
-    "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
-    "extract-intl": "babel-node --presets latest,stage-0 -- ./internals/scripts/extract-intl.js",
-    "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
-    "preinstall": "npm run npmcheckversion",
-    "postinstall": "npm run build:dll",
-    "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
     "build:clean": "npm run test:clean && rimraf ./build",
     "build:dll": "node ./internals/scripts/dependencies.js",
-    "start": "cross-env NODE_ENV=development node server",
-    "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
-    "start:production": "npm run test && npm run build && npm run start:prod",
-    "start:prod": "cross-env NODE_ENV=production node server",
-    "presetup": "npm i chalk shelljs",
-    "setup": "node ./internals/scripts/setup.js",
-    "postsetup": "npm run build:dll",
-    "clean": "shjs ./internals/scripts/clean.js",
-    "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
-    "generate": "plop --plopfile internals/generators/index.js",
-    "lint": "npm run lint:js",
+    "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "extract-intl": "babel-node --presets latest,stage-0 -- ./internals/scripts/extract-intl.js",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
+    "lint": "npm run lint:js",
+    "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
+    "postinstall": "npm run build:dll",
+    "preanalyze": "npm run analyze:clean",
+    "prebuild": "npm run build:clean",
+    "preinstall": "npm run npmcheckversion",
     "pretest": "npm run test:clean && npm run lint",
+    "start:prod": "NODE_ENV=production node server",
+    "start:production": "npm run test && npm run build && npm run start:prod",
+    "start:tunnel": "NODE_ENV=development ENABLE_TUNNEL=true node server",
+    "start": "NODE_ENV=development node server",
     "test:clean": "rimraf ./coverage",
-    "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "test:watch": "NODE_ENV=test jest --watchAll",
+    "test": "NODE_ENV=test jest --coverage"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
   },
   "pre-commit": "lint:staged",
-  "babel": {
-    "presets": [
-      [
-        "latest",
-        {
-          "es2015": {
-            "modules": false
-          }
-        }
-      ],
-      "react",
-      "stage-0"
-    ],
-    "env": {
-      "production": {
-        "only": [
-          "app"
-        ],
-        "plugins": [
-          "transform-react-remove-prop-types",
-          "transform-react-constant-elements",
-          "transform-react-inline-elements"
-        ]
-      },
-      "test": {
-        "plugins": [
-          "transform-es2015-modules-commonjs",
-          "dynamic-import-node"
-        ]
-      }
-    }
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true,
-      "node": true,
-      "jest": true,
-      "es6": true
-    },
-    "plugins": [
-      "redux-saga",
-      "react",
-      "jsx-a11y"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
-      "import/imports-first": 0,
-      "import/newline-after-import": 0,
-      "import/no-dynamic-require": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-named-as-default": 0,
-      "import/no-unresolved": 2,
-      "import/prefer-default-export": 0,
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ],
-      "jsx-a11y/aria-props": 2,
-      "jsx-a11y/heading-has-content": 0,
-      "jsx-a11y/href-no-hash": 2,
-      "jsx-a11y/label-has-for": 2,
-      "jsx-a11y/mouse-events-have-key-events": 2,
-      "jsx-a11y/role-has-required-aria-props": 2,
-      "jsx-a11y/role-supports-aria-props": 2,
-      "max-len": 0,
-      "newline-per-chained-call": 0,
-      "no-confusing-arrow": 0,
-      "no-console": 1,
-      "no-use-before-define": 0,
-      "prefer-template": 2,
-      "class-methods-use-this": 0,
-      "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [
-        2,
-        "multiline"
-      ],
-      "react/jsx-filename-extension": 0,
-      "react/jsx-no-target-blank": 0,
-      "react/require-extension": 0,
-      "react/self-closing-comp": 0,
-      "redux-saga/no-yield-in-race": 2,
-      "redux-saga/yield-effects": 2,
-      "require-yield": 0,
-      "import/no-webpack-loader-syntax": 0
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./internals/webpack/webpack.prod.babel.js"
-        }
-      }
-    }
-  },
   "dllPlugin": {
     "path": "node_modules/react-boilerplate-dlls",
     "exclude": [
       "chalk",
       "compression",
-      "cross-env",
       "express",
       "ip",
       "minimist",
@@ -212,7 +89,6 @@
     "babel-polyfill": "6.20.0",
     "chalk": "1.1.3",
     "compression": "1.6.2",
-    "cross-env": "3.1.3",
     "express": "4.14.0",
     "fontfaceobserver": "2.0.7",
     "immutable": "3.8.1",
@@ -277,10 +153,8 @@
     "jest-cli": "18.0.0",
     "lint-staged": "3.2.1",
     "ngrok": "2.2.4",
-    "node-plop": "0.5.4",
     "null-loader": "0.1.1",
     "offline-plugin": "4.5.2",
-    "plop": "1.7.3",
     "pre-commit": "1.1.3",
     "react-addons-test-utils": "15.4.1",
     "rimraf": "2.5.4",
