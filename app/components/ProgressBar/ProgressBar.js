@@ -13,7 +13,7 @@ class ProgressBar extends React.Component {
   static defaultProps = {
     percent: -1,
     autoIncrement: true,
-    intervalTime: 75,
+    intervalTime: 75
   };
 
   constructor(props) {
@@ -21,7 +21,7 @@ class ProgressBar extends React.Component {
     this.handleProps = this.handleProps.bind(this);
     this.increment = this.increment.bind(this);
     this.state = {
-      percent: props.percent,
+      percent: props.percent
     };
   }
 
@@ -65,7 +65,7 @@ class ProgressBar extends React.Component {
     percent += ((Math.random() + 1) - Math.random());
     percent = percent < 99 ? percent : 99;
     this.setState({
-      percent,
+      percent
     });
   }
 
@@ -86,17 +86,17 @@ class ProgressBar extends React.Component {
 
     if (props.percent >= 100) {
       this.setState({
-        percent: 99.9,
+        percent: 99.9
       }, () => {
         this.timeout = setTimeout(() => {
           this.setState({
-            percent: -1,
+            percent: -1
           }, () => props.updateProgress(-1));
         }, 300);
       });
     } else {
       this.setState({
-        percent: props.percent,
+        percent: props.percent
       });
     }
   }
@@ -119,7 +119,7 @@ class ProgressBar extends React.Component {
 }
 
 ProgressBar.propTypes = {
-  percent: PropTypes.number.isRequired,
+  percent: PropTypes.number.isRequired
 };
 
 export default ProgressBar;

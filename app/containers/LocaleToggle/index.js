@@ -12,7 +12,7 @@ import Toggle from 'components/Toggle';
 import Wrapper from './Wrapper';
 import messages from './messages';
 import { appLocales } from '../../i18n';
-import { changeLocale } from '../LanguageProvider/actions';
+import { changeLocale } from '../LanguageProvider/reducer';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
 export class LocaleToggle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -27,7 +27,7 @@ export class LocaleToggle extends React.PureComponent { // eslint-disable-line r
 
 LocaleToggle.propTypes = {
   onLocaleToggle: React.PropTypes.func,
-  locale: React.PropTypes.string,
+  locale: React.PropTypes.string
 };
 
 const mapStateToProps = createSelector(
@@ -38,7 +38,7 @@ const mapStateToProps = createSelector(
 export function mapDispatchToProps(dispatch) {
   return {
     onLocaleToggle: (evt) => dispatch(changeLocale(evt.target.value)),
-    dispatch,
+    dispatch
   };
 }
 

@@ -19,8 +19,8 @@ import Form from './Form';
 import Input from './Input';
 import Section from './Section';
 import messages from './messages';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
+import { loadRepos } from '../App/reducer';
+import { changeUsername } from './reducer';
 import { makeSelectUsername } from './selectors';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -38,7 +38,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     const reposListProps = {
       loading,
       error,
-      repos,
+      repos
     };
 
     return (
@@ -46,7 +46,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         <Helmet
           title="Home Page"
           meta={[
-            { name: 'description', content: 'A React.js Boilerplate application homepage' },
+            { name: 'description', content: 'A React.js Boilerplate application homepage' }
           ]}
         />
         <div>
@@ -89,15 +89,15 @@ HomePage.propTypes = {
   loading: React.PropTypes.bool,
   error: React.PropTypes.oneOfType([
     React.PropTypes.object,
-    React.PropTypes.bool,
+    React.PropTypes.bool
   ]),
   repos: React.PropTypes.oneOfType([
     React.PropTypes.array,
-    React.PropTypes.bool,
+    React.PropTypes.bool
   ]),
   onSubmitForm: React.PropTypes.func,
   username: React.PropTypes.string,
-  onChangeUsername: React.PropTypes.func,
+  onChangeUsername: React.PropTypes.func
 };
 
 export function mapDispatchToProps(dispatch) {
@@ -106,7 +106,7 @@ export function mapDispatchToProps(dispatch) {
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
-    },
+    }
   };
 }
 
@@ -114,7 +114,7 @@ const mapStateToProps = createStructuredSelector({
   repos: makeSelectRepos(),
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
-  error: makeSelectError(),
+  error: makeSelectError()
 });
 
 // Wrap the component to inject dispatch and state into it

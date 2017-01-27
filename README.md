@@ -6,6 +6,7 @@
 - Add server side rendering to express
 - Add stylelint and configure in lint-staged
 - Add flow types
+- Add redux-form
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>

@@ -1,23 +1,16 @@
-/*
- *
- * LanguageProvider reducer
- *
- */
-
 import { fromJS } from 'immutable';
+import { DEFAULT_LOCALE } from '../App/reducer';
 
-import {
-  CHANGE_LOCALE,
-} from './constants';
-import {
-  DEFAULT_LOCALE,
-} from '../App/constants';
+// Action Types
+export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE';
 
+// Initial State
 const initialState = fromJS({
-  locale: DEFAULT_LOCALE,
+  locale: DEFAULT_LOCALE
 });
 
-function languageProviderReducer(state = initialState, action) {
+// Reducer
+export default function languageProviderReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_LOCALE:
       return state
@@ -27,4 +20,10 @@ function languageProviderReducer(state = initialState, action) {
   }
 }
 
-export default languageProviderReducer;
+// Actions
+export function changeLocale(languageLocale) {
+  return {
+    type: CHANGE_LOCALE,
+    locale: languageLocale
+  };
+}

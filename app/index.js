@@ -57,13 +57,13 @@ const store = configureStore(initialState, browserHistory);
 // is under the non-default key ("routing"), selectLocationState
 // must be provided for resolving how to retrieve the "route" in the state
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: makeSelectLocationState(),
+  selectLocationState: makeSelectLocationState()
 });
 
 // Set up the router, wrapping all Routes in the App component
 const rootRoute = {
   component: App,
-  childRoutes: createRoutes(store),
+  childRoutes: createRoutes(store)
 };
 
 const render = (messages) => {
@@ -101,7 +101,7 @@ if (!window.Intl) {
   }))
     .then(() => Promise.all([
       import('intl/locale-data/jsonp/en.js'),
-      import('intl/locale-data/jsonp/de.js'),
+      import('intl/locale-data/jsonp/de.js')
     ]))
     .then(() => render(translationMessages))
     .catch((err) => {

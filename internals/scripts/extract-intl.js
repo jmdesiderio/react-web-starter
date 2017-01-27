@@ -15,7 +15,7 @@ const presets = pkg.babel.presets;
 const plugins = pkg.babel.plugins || [];
 
 const i18n = require('../../app/i18n');
-import { DEFAULT_LOCALE } from '../../app/containers/App/constants';
+import { DEFAULT_LOCALE } from '../../app/containers/App/reducer';
 
 require('shelljs/global');
 
@@ -80,8 +80,8 @@ for (const locale of locales) {
 }
 
 /* push `react-intl` plugin to the existing plugins that are already configured in `package.json`
-   Example: 
-   ``` 
+   Example:
+   ```
   "babel": {
     "plugins": [
       ["transform-object-rest-spread", { "useBuiltIns": true }]

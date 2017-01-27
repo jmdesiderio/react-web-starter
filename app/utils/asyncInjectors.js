@@ -18,7 +18,7 @@ export function checkStore(store) {
     getState: isFunction,
     replaceReducer: isFunction,
     runSaga: isFunction,
-    asyncReducers: isObject,
+    asyncReducers: isObject
   };
   invariant(
     conformsTo(store, shape),
@@ -74,6 +74,6 @@ export function getAsyncInjectors(store) {
 
   return {
     injectReducer: injectAsyncReducer(store, true),
-    injectSagas: injectAsyncSagas(store, true),
+    injectSagas: injectAsyncSagas(store, true)
   };
 }

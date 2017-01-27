@@ -24,7 +24,7 @@ export default function createRoutes(store) {
         const importModules = Promise.all([
           import('containers/HomePage/reducer'),
           import('containers/HomePage/sagas'),
-          import('containers/HomePage'),
+          import('containers/HomePage')
         ]);
 
         const renderRoute = loadModule(cb);
@@ -37,7 +37,7 @@ export default function createRoutes(store) {
         });
 
         importModules.catch(errorLoading);
-      },
+      }
     }, {
       path: '/features',
       name: 'features',
@@ -45,7 +45,7 @@ export default function createRoutes(store) {
         import('containers/FeaturePage')
           .then(loadModule(cb))
           .catch(errorLoading);
-      },
+      }
     }, {
       path: '*',
       name: 'notfound',
@@ -53,7 +53,7 @@ export default function createRoutes(store) {
         import('containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);
-      },
-    },
+      }
+    }
   ];
 }

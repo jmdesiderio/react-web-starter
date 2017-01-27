@@ -48,5 +48,5 @@ export {
   makeSelectLoading,
   makeSelectError,
   makeSelectRepos,
-  makeSelectLocationState,
+  makeSelectLocationState
 };

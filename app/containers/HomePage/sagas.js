@@ -4,8 +4,11 @@
 
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import { LOAD_REPOS } from 'containers/App/constants';
-import { reposLoaded, repoLoadingError } from 'containers/App/actions';
+import {
+  LOAD_REPOS,
+  reposLoaded,
+  repoLoadingError
+} from 'containers/App/reducer';
 
 import request from 'utils/request';
 import { makeSelectUsername } from 'containers/HomePage/selectors';
@@ -43,5 +46,5 @@ export function* githubData() {
 
 // Bootstrap sagas
 export default [
-  githubData,
+  githubData
 ];

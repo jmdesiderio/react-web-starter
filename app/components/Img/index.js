@@ -17,10 +17,10 @@ function Img(props) {
 Img.propTypes = {
   src: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.object,
+    PropTypes.object
   ]).isRequired,
   alt: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default Img;

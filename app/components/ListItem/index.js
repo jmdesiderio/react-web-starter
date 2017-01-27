@@ -14,7 +14,7 @@ function ListItem(props) {
 }
 
 ListItem.propTypes = {
-  item: React.PropTypes.any,
+  item: React.PropTypes.any
 };
 
 export default ListItem;

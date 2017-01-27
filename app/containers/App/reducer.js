@@ -1,34 +1,23 @@
-/*
- * AppReducer
- *
- * The reducer takes care of our data. Using actions, we can change our
- * application state.
- * To add a new action, add it to the switch statement in the reducer function
- *
- * Example:
- * case YOUR_ACTION_CONSTANT:
- *   return state.set('yourStateVariable', true);
- */
-
 import { fromJS } from 'immutable';
 
-import {
-  LOAD_REPOS_SUCCESS,
-  LOAD_REPOS,
-  LOAD_REPOS_ERROR,
-} from './constants';
+// Action Types
+export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
+export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
+export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const DEFAULT_LOCALE = 'en';
 
-// The initial state of the App
+// Initial State
 const initialState = fromJS({
   loading: false,
   error: false,
   currentUser: false,
   userData: {
-    repositories: false,
-  },
+    repositories: false
+  }
 });
 
-function appReducer(state = initialState, action) {
+// Reducer
+export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
       return state
@@ -49,4 +38,24 @@ function appReducer(state = initialState, action) {
   }
 }
 
-export default appReducer;
+// Actions
+export function loadRepos() {
+  return {
+    type: LOAD_REPOS
+  };
+}
+
+export function reposLoaded(repos, username) {
+  return {
+    type: LOAD_REPOS_SUCCESS,
+    repos,
+    username
+  };
+}
+
+export function repoLoadingError(error) {
+  return {
+    type: LOAD_REPOS_ERROR,
+    error
+  };
+}

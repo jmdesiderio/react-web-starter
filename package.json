@@ -58,9 +58,9 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "app/**/*.{js,jsx}",
-      "!app/**/*.test.{js,jsx}",
-      "!app/*/RbGenerated*/*.{js,jsx}",
+      "app/**/*.js",
+      "!app/**/*.test.js",
+      "!app/*/RbGenerated*/*.js",
       "!app/index.js",
       "!app/routes.js"
     ],

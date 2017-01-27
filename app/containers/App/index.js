@@ -30,7 +30,7 @@ export function App(props) {
         titleTemplate="%s - React.js Boilerplate"
         defaultTitle="React.js Boilerplate"
         meta={[
-          { name: 'description', content: 'A React.js Boilerplate application' },
+          { name: 'description', content: 'A React.js Boilerplate application' }
         ]}
       />
       <Header />
@@ -41,7 +41,7 @@ export function App(props) {
 }
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: React.PropTypes.node
 };
 
 export default withProgressBar(App);

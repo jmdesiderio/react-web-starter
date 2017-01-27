@@ -46,7 +46,7 @@ const Circle = (props) => {
 
 Circle.propTypes = {
   delay: PropTypes.number,
-  rotate: PropTypes.number,
+  rotate: PropTypes.number
 };
 
 export default Circle;
