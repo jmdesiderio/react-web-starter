@@ -1,7 +1,6 @@
 ### TODO:
-- Take out styled-components and add CSS Modules + autoprefixer
 - Restructure folders with ducks
-- Move test file next to tested file
+- Take out styled-components and add CSS Modules + autoprefixer
 - Update image-webpack-loader
 - Add server side rendering to express
 - Add stylelint and configure in lint-staged
