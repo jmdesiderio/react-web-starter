@@ -135,15 +135,13 @@ path: '/posts/:slug',
 name: 'post',
 getComponent(nextState, cb) {
  const importModules = Promise.all([
-   import('containers/Post/reducer'),
    import('containers/Post/sagas'),
    import('containers/Post'),
  ]);
 
  const renderRoute = loadModule(cb);
 
- importModules.then(([reducer, sagas, component]) => {
-   injectReducer('post', reducer.default);
+ importModules.then(([sagas, component]) => {
    injectSagas(sagas.default);
    renderRoute(component);
  });
@@ -195,7 +193,7 @@ export function* getXhrPodcast(slug) {
 }
 ```
 
-Wait (`take`) for the LOAD_POST constant, which contains the slug payload from the `getPost()` function in actions.js. 
+Wait (`take`) for the LOAD_POST constant, which contains the slug payload from the `getPost()` function in actions.js.
 
 When the action is fired then dispatch the `getXhrPodcast()` function to get the response from your api. On success dispatch the `postLoaded()` action (`yield put`) which sends back the response and can be added into the reducer state.
 

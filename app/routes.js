@@ -14,7 +14,7 @@ const loadModule = (cb) => (componentModule) => {
 
 export default function createRoutes(store) {
   // create reusable async injectors using getAsyncInjectors factory
-  const { injectReducer, injectSagas } = getAsyncInjectors(store);
+  const { injectSagas } = getAsyncInjectors(store);
 
   return [
     {
@@ -22,15 +22,13 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('ducks/home'),
           import('containers/HomePage/sagas'),
           import('containers/HomePage')
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('home', reducer.default);
+        importModules.then(([sagas, component]) => {
           injectSagas(sagas.default);
 
           renderRoute(component);

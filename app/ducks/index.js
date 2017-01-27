@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux-immutable';
 
-import globalReducer from './global';
-import languageReducer from './language';
-import routeReducer from './route';
+import global from './global';
+import home from './home';
+import language from './language';
+import route from './route';
 
-// Creates the main reducer with the asynchronously loaded ones
-export default function rootReducer(asyncReducers) {
+export default function rootReducer() {
   return combineReducers({
-    global: globalReducer,
-    language: languageReducer,
-    route: routeReducer,
-    ...asyncReducers
+    global,
+    home,
+    language,
+    route
   });
 }
