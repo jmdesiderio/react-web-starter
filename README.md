@@ -5,6 +5,7 @@
 - Update image-webpack-loader
 - Add server side rendering to express
 - Add stylelint and configure in lint-staged
+- Add flow types
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>
