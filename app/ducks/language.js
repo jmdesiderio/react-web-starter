@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { DEFAULT_LOCALE } from '../App/reducer';
+import { DEFAULT_LOCALE } from './global';
 
 // Action Types
 export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE';

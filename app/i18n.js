@@ -8,7 +8,7 @@ import { addLocaleData } from 'react-intl';
 import enLocaleData from 'react-intl/locale-data/en';
 import deLocaleData from 'react-intl/locale-data/de';
 
-import { DEFAULT_LOCALE } from '../app/containers/App/reducer';
+import { DEFAULT_LOCALE } from './ducks/global';
 
 import enTranslationMessages from './translations/en.json';
 import deTranslationMessages from './translations/de.json';

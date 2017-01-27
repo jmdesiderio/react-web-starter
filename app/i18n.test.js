@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from './containers/App/reducer';
+import { DEFAULT_LOCALE } from './ducks/global';
 import { formatTranslationMessages } from './i18n';
 
 jest.mock('./translations/en.json', () => (

@@ -19,8 +19,8 @@ import Form from './Form';
 import Input from './Input';
 import Section from './Section';
 import messages from './messages';
-import { loadRepos } from '../App/reducer';
-import { changeUsername } from './reducer';
+import { loadRepos } from '../../ducks/global';
+import { changeUsername } from '../../ducks/home';
 import { makeSelectUsername } from './selectors';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

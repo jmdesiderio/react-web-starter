@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 import homeReducer, {
   CHANGE_USERNAME,
   changeUsername
-} from './reducer';
+} from './home';
 
 describe('homeReducer', () => {
   let state;

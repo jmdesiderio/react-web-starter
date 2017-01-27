@@ -7,7 +7,7 @@ import appReducer, {
   loadRepos,
   reposLoaded,
   repoLoadingError
-} from './reducer';
+} from './global';
 
 describe('appReducer', () => {
   let state;

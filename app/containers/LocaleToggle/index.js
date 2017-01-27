@@ -12,7 +12,7 @@ import Toggle from 'components/Toggle';
 import Wrapper from './Wrapper';
 import messages from './messages';
 import { appLocales } from '../../i18n';
-import { changeLocale } from '../LanguageProvider/reducer';
+import { changeLocale } from '../../ducks/language';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
 export class LocaleToggle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

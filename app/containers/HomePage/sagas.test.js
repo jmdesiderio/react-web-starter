@@ -11,7 +11,7 @@ import {
   LOAD_REPOS,
   reposLoaded,
   repoLoadingError
-} from 'containers/App/reducer';
+} from '../../ducks/global';
 
 import { getRepos, githubData } from './sagas';
 

@@ -24,7 +24,7 @@ import '!file-loader?name=[name].[ext]!./static/manifest.json';
 import 'file-loader?name=[name].[ext]!./static/.htaccess'; // eslint-disable-line import/extensions
 /* eslint-enable import/no-webpack-loader-syntax */
 
-import configureStore from './redux/store';
+import configureStore from './store';
 
 // Import i18n messages
 import { translationMessages } from './i18n';

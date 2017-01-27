@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router';
 
 import ConnectedLanguageProvider, { LanguageProvider } from './index';
-import configureStore from '../../redux/store';
+import configureStore from '../../store';
 
 import { translationMessages } from '../../i18n';
 

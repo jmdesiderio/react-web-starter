@@ -8,10 +8,10 @@ import {
   LOAD_REPOS,
   reposLoaded,
   repoLoadingError
-} from 'containers/App/reducer';
+} from '../../ducks/global';
 
-import request from 'utils/request';
-import { makeSelectUsername } from 'containers/HomePage/selectors';
+import request from '../../utils/request';
+import { makeSelectUsername } from '../../containers/HomePage/selectors';
 
 /**
  * Github repos request/response handler

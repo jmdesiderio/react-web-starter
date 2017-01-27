@@ -6,7 +6,7 @@ import isString from 'lodash/isString';
 import invariant from 'invariant';
 import warning from 'warning';
 
-import createReducer from '../redux/reducers';
+import rootReducer from '../ducks';
 
 /**
  * Validate the shape of redux store
@@ -41,7 +41,7 @@ export function injectAsyncReducer(store, isValid) {
     if (Reflect.has(store.asyncReducers, name)) return;
 
     store.asyncReducers[name] = asyncReducer; // eslint-disable-line no-param-reassign
-    store.replaceReducer(createReducer(store.asyncReducers));
+    store.replaceReducer(rootReducer(store.asyncReducers));
   };
 }
 

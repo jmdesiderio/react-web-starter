@@ -8,8 +8,8 @@ import { IntlProvider } from 'react-intl';
 
 import ReposList from 'components/ReposList';
 import { HomePage, mapDispatchToProps } from './index';
-import { changeUsername } from './reducer';
-import { loadRepos } from '../App/reducer';
+import { changeUsername } from '../../ducks/home';
+import { loadRepos } from '../../ducks/global';
 
 describe('<HomePage />', () => {
   it('should render the repos list', () => {

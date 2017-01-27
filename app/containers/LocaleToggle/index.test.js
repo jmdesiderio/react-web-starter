@@ -4,10 +4,10 @@ import { browserHistory } from 'react-router';
 import { shallow, mount } from 'enzyme';
 
 import LocaleToggle, { mapDispatchToProps } from './index';
-import { changeLocale } from '../LanguageProvider/reducer';
+import { changeLocale } from '../../ducks/language';
 import LanguageProvider from '../LanguageProvider';
 
-import configureStore from '../../redux/store';
+import configureStore from '../../store';
 import { translationMessages } from '../../i18n';
 
 describe('<LocaleToggle />', () => {
