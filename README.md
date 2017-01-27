@@ -3,6 +3,7 @@
 - Restructure folders with ducks
 - Move test file next to tested file
 - Update image-webpack-loader
+- Add server side rendering to express
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>
