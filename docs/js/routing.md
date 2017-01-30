@@ -20,7 +20,7 @@ This is what a standard (generated) route looks like for a container:
   name: 'home',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/HomePage')
+      import('containers/HomeView')
     ]);
 
     const renderRoute = loadModule(cb);
@@ -97,7 +97,7 @@ To add an index route, use the following pattern:
   name: 'home',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/HomePage')
+      import('containers/HomeView')
     ]);
 
     const renderRoute = loadModule(cb);

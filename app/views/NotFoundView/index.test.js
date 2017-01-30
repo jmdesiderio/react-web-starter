@@ -1,5 +1,5 @@
 /**
- * Testing the NotFoundPage
+ * Testing the NotFoundView
  */
 
 import React from 'react';
@@ -17,7 +17,7 @@ describe('<NotFound />', () => {
     expect(renderedComponent.contains(
       <H1>
         <FormattedMessage
-          id="boilerplate.containers.NotFoundPage.header"
+          id="boilerplate.containers.NotFoundView.header"
           defaultMessage={'Page not found.'}
         />
       </H1>)).toEqual(true);

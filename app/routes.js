@@ -4,20 +4,17 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
 import App from './containers/App';
-import HomePage from './views/HomePage';
-import FeaturePage from './views/FeaturePage';
-import NotFoundPage from './views/NotFoundPage';
+
+import HomeView from './views/HomeView';
+import FeaturesView from './views/FeaturesView';
+import NotFoundView from './views/NotFoundView';
 
 export default function createRoutes () {
   return (
     <Route path="/" component={App}>
-      <IndexRoute
-        getComponent={(nextState, cb) => {
-          cb(null, HomePage);
-        }}
-      />
-      <Route path="/features" component={FeaturePage} />
-      <Route path="*" component={NotFoundPage} />
+      <IndexRoute component={HomeView} />
+      <Route path="/features" component={FeaturesView} />
+      <Route path="*" component={NotFoundView} />
     </Route>
   );
 }

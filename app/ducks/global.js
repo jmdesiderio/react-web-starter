@@ -2,13 +2,12 @@ import { fromJS } from 'immutable';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import request from '../utils/request';
-import { makeSelectUsername } from '../views/HomePage/selectors';
+import { makeSelectUsername } from '../views/HomeView/selectors';
 
 // Action Types
 export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
 export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
 export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
-export const DEFAULT_LOCALE = 'en';
 
 // Initial State
 const initialState = fromJS({
@@ -21,7 +20,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export default function globalReducer (state = initialState, action) {
+export function globalReducer (state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
       return state

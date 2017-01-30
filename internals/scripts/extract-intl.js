@@ -15,7 +15,7 @@ const presets = pkg.babel.presets;
 const plugins = pkg.babel.plugins || [];
 
 const i18n = require('../../app/i18n');
-import { DEFAULT_LOCALE } from '../../app/containers/App/reducer';
+import { DEFAULT_LOCALE } from '../../app/ducks/language';
 
 require('shelljs/global');
 

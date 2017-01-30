@@ -1,7 +1,7 @@
 /*
- * HomePage Messages
+ * HomeView Messages
  *
- * This contains all the text for the HomePage component.
+ * This contains all the text for the HomeView component.
  */
 import { defineMessages } from 'react-intl';
 

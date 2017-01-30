@@ -1,5 +1,5 @@
 /**
- * Test the HomePage
+ * Test the HomeView
  */
 
 import React from 'react';
@@ -8,7 +8,7 @@ import { IntlProvider } from 'react-intl';
 
 import ReposList from 'components/ReposList';
 import {
-  HomePage,
+  HomeView,
   mapDispatchToProps,
   AtPrefix,
   CenteredSection,
@@ -19,10 +19,10 @@ import {
 import { changeUsername } from '../../ducks/home';
 import { loadRepos } from '../../ducks/global';
 
-describe('<HomePage />', () => {
+describe('<HomeView />', () => {
   it('should render the repos list', () => {
     const renderedComponent = shallow(
-      <HomePage loading error={false} repos={[]} />
+      <HomeView loading error={false} repos={[]} />
     );
     expect(renderedComponent.contains(<ReposList loading error={false} repos={[]} />)).toEqual(true);
   });
@@ -31,7 +31,7 @@ describe('<HomePage />', () => {
     const submitSpy = jest.fn();
     mount(
       <IntlProvider locale="en">
-        <HomePage
+        <HomeView
           username="Not Empty"
           onChangeUsername={() => {}}
           onSubmitForm={submitSpy}

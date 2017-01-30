@@ -1,10 +1,11 @@
 import { fromJS } from 'immutable';
 import { put, takeLatest } from 'redux-saga/effects';
 
-import appReducer, {
+import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
+  globalReducer,
   loadRepos,
   reposLoaded,
   repoLoadingError,
@@ -12,7 +13,7 @@ import appReducer, {
   globalSaga
 } from './global';
 
-describe('appReducer', () => {
+describe('globalReducer', () => {
   let state;
 
   beforeEach(() => {
@@ -28,7 +29,7 @@ describe('appReducer', () => {
 
   it('should return the initial state', () => {
     const expectedResult = state;
-    expect(appReducer(undefined, {})).toEqual(expectedResult);
+    expect(globalReducer(undefined, {})).toEqual(expectedResult);
   });
 
   it('should handle the loadRepos action correctly', () => {
@@ -37,7 +38,7 @@ describe('appReducer', () => {
       .set('error', false)
       .setIn(['userData', 'repositories'], false);
 
-    expect(appReducer(state, loadRepos())).toEqual(expectedResult);
+    expect(globalReducer(state, loadRepos())).toEqual(expectedResult);
   });
 
   it('should handle the reposLoaded action correctly', () => {
@@ -50,7 +51,7 @@ describe('appReducer', () => {
       .set('loading', false)
       .set('currentUser', username);
 
-    expect(appReducer(state, reposLoaded(fixture, username))).toEqual(expectedResult);
+    expect(globalReducer(state, reposLoaded(fixture, username))).toEqual(expectedResult);
   });
 
   it('should handle the repoLoadingError action correctly', () => {
@@ -61,7 +62,7 @@ describe('appReducer', () => {
       .set('error', fixture)
       .set('loading', false);
 
-    expect(appReducer(state, repoLoadingError(fixture))).toEqual(expectedResult);
+    expect(globalReducer(state, repoLoadingError(fixture))).toEqual(expectedResult);
   });
 });
 

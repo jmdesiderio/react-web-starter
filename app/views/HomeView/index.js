@@ -40,7 +40,7 @@ export const Input = styled.input`
 `;
 
 
-export class HomePage extends PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class HomeView extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount () {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
@@ -99,7 +99,7 @@ export class HomePage extends PureComponent { // eslint-disable-line react/prefe
   }
 }
 
-HomePage.propTypes = {
+HomeView.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.object,
@@ -131,4 +131,4 @@ const mapStateToProps = createStructuredSelector({
   error: makeSelectError()
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView);

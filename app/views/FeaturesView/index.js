@@ -1,5 +1,5 @@
 /*
- * FeaturePage
+ * FeaturesView
  *
  * List all the features
  */
@@ -24,7 +24,7 @@ export const ListItemTitle = styled.p`
   font-weight: bold;
 `;
 
-export default class FeaturePage extends Component { // eslint-disable-line react/prefer-stateless-function
+export default class FeaturesView extends Component { // eslint-disable-line react/prefer-stateless-function
   shouldComponentUpdate () {
     return false;
   }
