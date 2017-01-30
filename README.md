@@ -1,5 +1,4 @@
 ### TODO:
-- Restructure folders with ducks
 - Take out styled-components and add CSS Modules + autoprefixer
 - Update image-webpack-loader
 - Add server side rendering to express
