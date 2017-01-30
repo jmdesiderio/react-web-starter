@@ -5,7 +5,7 @@ import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
 import RepoListItem from 'containers/RepoListItem';
 
-function ReposList({ loading, error, repos }) {
+function ReposList ({ loading, error, repos }) {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }

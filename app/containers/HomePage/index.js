@@ -27,13 +27,13 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
   /**
    * when initial state username is not null, submit the form to load repos
    */
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
     }
   }
 
-  render() {
+  render () {
     const { loading, error, repos } = this.props;
     const reposListProps = {
       loading,
@@ -100,7 +100,7 @@ HomePage.propTypes = {
   onChangeUsername: React.PropTypes.func
 };
 
-export function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps (dispatch) {
   return {
     onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
     onSubmitForm: (evt) => {

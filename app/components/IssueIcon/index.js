@@ -1,6 +1,6 @@
 import React from 'react';
 
-function IssueIcon(props) {
+function IssueIcon (props) {
   return (
     <svg
       height="1em"

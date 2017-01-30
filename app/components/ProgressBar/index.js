@@ -1,9 +1,9 @@
 import React from 'react';
 import ProgressBar from './ProgressBar';
 
-function withProgressBar(WrappedComponent) {
+function withProgressBar (WrappedComponent) {
   class AppWithProgressBar extends React.Component {
-    constructor(props) {
+    constructor (props) {
       super(props);
       this.state = {
         progress: -1,
@@ -12,7 +12,7 @@ function withProgressBar(WrappedComponent) {
       this.updateProgress = this.updateProgress.bind(this);
     }
 
-    componentWillMount() {
+    componentWillMount () {
       // Store a reference to the listener.
       /* istanbul ignore next */
       this.unsubscribeHistory = this.props.router && this.props.router.listenBefore((location) => {
@@ -23,7 +23,7 @@ function withProgressBar(WrappedComponent) {
       });
     }
 
-    componentWillUpdate(newProps, newState) {
+    componentWillUpdate (newProps, newState) {
       const { loadedRoutes, progress } = this.state;
       const { pathname } = newProps.location;
 
@@ -36,16 +36,16 @@ function withProgressBar(WrappedComponent) {
       }
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
       // Unset unsubscribeHistory since it won't be garbage-collected.
       this.unsubscribeHistory = undefined;
     }
 
-    updateProgress(progress) {
+    updateProgress (progress) {
       this.setState({ progress });
     }
 
-    render() {
+    render () {
       return (
         <div>
           <ProgressBar percent={this.state.progress} updateProgress={this.updateProgress} />

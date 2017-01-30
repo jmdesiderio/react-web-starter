@@ -10,7 +10,7 @@ import {
 
 // Fixtures
 
-function* testSaga() {
+function* testSaga () {
   yield put({ type: 'TEST', payload: 'yup' });
 }
 

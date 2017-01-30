@@ -3,7 +3,7 @@ import React from 'react';
 import Ul from './Ul';
 import Wrapper from './Wrapper';
 
-function List(props) {
+function List (props) {
   const ComponentToRender = props.component;
   let content = (<div></div>);
 

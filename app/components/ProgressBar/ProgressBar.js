@@ -16,7 +16,7 @@ class ProgressBar extends React.Component {
     intervalTime: 75
   };
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.handleProps = this.handleProps.bind(this);
     this.increment = this.increment.bind(this);
@@ -25,11 +25,11 @@ class ProgressBar extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.handleProps(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (this.interval) {
       // stop progress when new props come in.
       clearInterval(this.interval);
@@ -44,7 +44,7 @@ class ProgressBar extends React.Component {
     this.handleProps(nextProps);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // cleaning up interval and timeout.
     if (this.interval) {
       clearInterval(this.interval);
@@ -56,7 +56,7 @@ class ProgressBar extends React.Component {
     }
   }
 
-  increment() {
+  increment () {
     /**
      * Increment the percent randomly.
      * Only used when autoIncrement is set to true.
@@ -69,7 +69,7 @@ class ProgressBar extends React.Component {
     });
   }
 
-  handleProps(props) {
+  handleProps (props) {
     /**
      * Increment progress bar if auto increment is set to true
      * and progress percent is less than 99.
@@ -101,7 +101,7 @@ class ProgressBar extends React.Component {
     }
   }
 
-  render() {
+  render () {
     const { percent } = this.state;
 
     // Hide progress bar if percent is less than 0.

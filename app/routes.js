@@ -12,7 +12,7 @@ const loadModule = (cb) => (componentModule) => {
   cb(null, componentModule.default);
 };
 
-export default function createRoutes(store) {
+export default function createRoutes (store) {
   // create reusable async injectors using getAsyncInjectors factory
   const { injectSagas } = getAsyncInjectors(store);
 
@@ -20,7 +20,7 @@ export default function createRoutes(store) {
     {
       path: '/',
       name: 'home',
-      getComponent(nextState, cb) {
+      getComponent (nextState, cb) {
         const importModules = Promise.all([
           import('containers/HomePage/sagas'),
           import('containers/HomePage')
@@ -39,7 +39,7 @@ export default function createRoutes(store) {
     }, {
       path: '/features',
       name: 'features',
-      getComponent(nextState, cb) {
+      getComponent (nextState, cb) {
         import('containers/FeaturePage')
           .then(loadModule(cb))
           .catch(errorLoading);
@@ -47,7 +47,7 @@ export default function createRoutes(store) {
     }, {
       path: '*',
       name: 'notfound',
-      getComponent(nextState, cb) {
+      getComponent (nextState, cb) {
         import('containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);

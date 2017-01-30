@@ -23,7 +23,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-export function App(props) {
+export function App (props) {
   return (
     <AppWrapper>
       <Helmet

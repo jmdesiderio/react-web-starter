@@ -6,6 +6,7 @@
 - Add stylelint and configure in lint-staged
 - Add flow types
 - Add redux-form
+- swap yarn start commands so it is production
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>

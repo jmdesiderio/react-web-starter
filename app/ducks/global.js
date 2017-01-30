@@ -17,7 +17,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export default function appReducer(state = initialState, action) {
+export default function appReducer (state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
       return state
@@ -39,13 +39,13 @@ export default function appReducer(state = initialState, action) {
 }
 
 // Actions
-export function loadRepos() {
+export function loadRepos () {
   return {
     type: LOAD_REPOS
   };
 }
 
-export function reposLoaded(repos, username) {
+export function reposLoaded (repos, username) {
   return {
     type: LOAD_REPOS_SUCCESS,
     repos,
@@ -53,7 +53,7 @@ export function reposLoaded(repos, username) {
   };
 }
 
-export function repoLoadingError(error) {
+export function repoLoadingError (error) {
   return {
     type: LOAD_REPOS_ERROR,
     error

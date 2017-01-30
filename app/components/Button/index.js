@@ -12,7 +12,7 @@ import A from './A';
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
 
-function Button(props) {
+function Button (props) {
   // Render an anchor tag
   let button = (
     <A href={props.href} onClick={props.onClick}>

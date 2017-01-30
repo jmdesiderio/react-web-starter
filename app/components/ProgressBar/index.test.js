@@ -16,7 +16,7 @@ describe('withProgressBar()', () => {
     clock = sinon.restore();
   });
 
-  function Component() {
+  function Component () {
     return (
       <div></div>
     );
