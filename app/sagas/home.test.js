@@ -2,10 +2,7 @@
  * Tests for HomePage sagas
  */
 
-import { cancel, take, put, takeLatest } from 'redux-saga/effects';
-import { createMockTask } from 'redux-saga/lib/utils';
-
-import { LOCATION_CHANGE } from 'react-router-redux';
+import { put, takeLatest } from 'redux-saga/effects';
 
 import {
   LOAD_REPOS,
@@ -13,7 +10,7 @@ import {
   repoLoadingError
 } from '../ducks/global';
 
-import { getRepos, githubData } from './home';
+import homeSaga, { getRepos } from './home';
 
 const username = 'mxstbr';
 
@@ -50,22 +47,11 @@ describe('getRepos Saga', () => {
   });
 });
 
-describe('githubDataSaga Saga', () => {
-  const githubDataSaga = githubData();
-  const mockedTask = createMockTask();
+describe('homeSaga Saga', () => {
+  const homeDataSaga = homeSaga();
 
   it('should start task to watch for LOAD_REPOS action', () => {
-    const takeLatestDescriptor = githubDataSaga.next().value;
+    const takeLatestDescriptor = homeDataSaga.next().value;
     expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_REPOS, getRepos));
-  });
-
-  it('should yield until LOCATION_CHANGE action', () => {
-    const takeDescriptor = githubDataSaga.next(mockedTask).value;
-    expect(takeDescriptor).toEqual(take(LOCATION_CHANGE));
-  });
-
-  it('should cancel the forked task when LOCATION_CHANGE happens', () => {
-    const cancelDescriptor = githubDataSaga.next().value;
-    expect(cancelDescriptor).toEqual(cancel(mockedTask));
   });
 });

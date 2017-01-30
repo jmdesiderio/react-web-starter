@@ -2,21 +2,17 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
+
 import rootReducer from './ducks';
-// import rootSaga from './sagas';
-import githubData from './sagas/home';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore (initialState = {}, history) {
-  const middlewares = [
+  const middlewares = applyMiddleware(
     sagaMiddleware,
     routerMiddleware(history)
-  ];
-
-  const enhancers = [
-    applyMiddleware(...middlewares)
-  ];
+  );
 
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
@@ -29,11 +25,11 @@ export default function configureStore (initialState = {}, history) {
   const store = createStore(
     rootReducer(),
     fromJS(initialState),
-    composeEnhancers(...enhancers)
+    composeEnhancers(middlewares)
   );
 
   // Extensions
-  sagaMiddleware.run(githubData);
+  sagaMiddleware.run(rootSaga);
 
   /* istanbul ignore next */
   if (module.hot) {
