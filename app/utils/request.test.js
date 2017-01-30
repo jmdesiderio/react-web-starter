@@ -19,10 +19,10 @@ describe('request', () => {
       window.fetch.mockReturnValue(Promise.resolve(res));
     });
 
-    it('should format the response correctly', (done) => {
+    it('should format the response correctly', done => {
       request('/thisurliscorrect')
         .catch(done)
-        .then((json) => {
+        .then(json => {
           expect(json.hello).toBe('world');
           done();
         });
@@ -43,9 +43,9 @@ describe('request', () => {
       window.fetch.mockReturnValue(Promise.resolve(res));
     });
 
-    it('should catch errors', (done) => {
+    it('should catch errors', done => {
       request('/thisdoesntexist')
-        .catch((err) => {
+        .catch(err => {
           expect(err.response.status).toBe(404);
           expect(err.response.statusText).toBe('Not Found');
           done();

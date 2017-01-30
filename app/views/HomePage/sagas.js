@@ -11,7 +11,7 @@ import {
 } from '../../ducks/global';
 
 import request from '../../utils/request';
-import { makeSelectUsername } from '../../containers/HomePage/selectors';
+import { makeSelectUsername } from './selectors';
 
 /**
  * Github repos request/response handler

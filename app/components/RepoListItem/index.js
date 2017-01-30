@@ -8,13 +8,40 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { FormattedNumber } from 'react-intl';
+import styled from 'styled-components';
 
 import { makeSelectCurrentUser } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
-import IssueIcon from './IssueIcon';
-import IssueLink from './IssueLink';
-import RepoLink from './RepoLink';
-import Wrapper from './Wrapper';
+import NormalIssueIcon from 'components/IssueIcon';
+import A from 'components/A';
+
+export const IssueIcon = styled(NormalIssueIcon)`
+  fill: #ccc;
+  margin-right: 0.25em;
+`;
+
+export const IssueLink = styled(A)`
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const RepoLink = styled(A)`
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: space-between;
+`;
 
 export class RepoListItem extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render () {

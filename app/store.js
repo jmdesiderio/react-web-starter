@@ -42,7 +42,7 @@ export default function configureStore (initialState = {}, history) {
   /* istanbul ignore next */
   if (module.hot) {
     module.hot.accept('./ducks', () => {
-      import('./ducks').then((reducerModule) => {
+      import('./ducks').then(reducerModule => {
         const createReducers = reducerModule.default;
         const nextReducers = createReducers(store.asyncReducers);
 

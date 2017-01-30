@@ -1,32 +1,46 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- */
-
-import React from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../../ducks/global';
 import { changeUsername } from '../../ducks/home';
 import { makeSelectUsername } from './selectors';
 
-export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  /**
-   * when initial state username is not null, submit the form to load repos
-   */
+export const AtPrefix = styled.span`
+  color: black;
+  margin-left: 0.4em;
+`;
+
+export const Section = styled.section`
+  margin: 3em auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;
+
+export const CenteredSection = styled(Section)`
+  text-align: center;
+`;
+
+export const Form = styled.form`
+  margin-bottom: 1em;
+`;
+
+export const Input = styled.input`
+  outline: none;
+  border-bottom: 1px dotted #999;
+`;
+
+
+export class HomePage extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount () {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
@@ -86,24 +100,24 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 }
 
 HomePage.propTypes = {
-  loading: React.PropTypes.bool,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.bool
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool
   ]),
-  repos: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.bool
+  repos: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.bool
   ]),
-  onSubmitForm: React.PropTypes.func,
-  username: React.PropTypes.string,
-  onChangeUsername: React.PropTypes.func
+  onSubmitForm: PropTypes.func,
+  username: PropTypes.string,
+  onChangeUsername: PropTypes.func
 };
 
 export function mapDispatchToProps (dispatch) {
   return {
-    onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: (evt) => {
+    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
+    onSubmitForm: evt => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
     }
@@ -117,5 +131,4 @@ const mapStateToProps = createStructuredSelector({
   error: makeSelectError()
 });
 
-// Wrap the component to inject dispatch and state into it
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

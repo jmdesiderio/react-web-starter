@@ -13,7 +13,7 @@ const circleFadeDelay = keyframes`
   }
 `;
 
-const Circle = (props) => {
+const Circle = props => {
   const CirclePrimitive = styled.div`
     width: 100%;
     height: 100%;
