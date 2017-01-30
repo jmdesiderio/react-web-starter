@@ -3,13 +3,12 @@ import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './ducks';
+// import rootSaga from './sagas';
+import githubData from './sagas/home';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore (initialState = {}, history) {
-  // Create the store with two middlewares
-  // 1. sagaMiddleware: Makes redux-sagas work
-  // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     sagaMiddleware,
     routerMiddleware(history)
@@ -19,7 +18,6 @@ export default function configureStore (initialState = {}, history) {
     applyMiddleware(...middlewares)
   ];
 
-  // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
@@ -35,18 +33,14 @@ export default function configureStore (initialState = {}, history) {
   );
 
   // Extensions
-  store.runSaga = sagaMiddleware.run;
-  store.asyncReducers = {}; // Async reducer registry
+  sagaMiddleware.run(githubData);
 
-  // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
   if (module.hot) {
     module.hot.accept('./ducks', () => {
-      import('./ducks').then(reducerModule => {
-        const createReducers = reducerModule.default;
-        const nextReducers = createReducers(store.asyncReducers);
-
-        store.replaceReducer(nextReducers);
+      import('./ducks').then(rootReducerModule => {
+        const nextRootReducer = rootReducerModule.default;
+        store.replaceReducer(nextRootReducer());
       });
     });
   }

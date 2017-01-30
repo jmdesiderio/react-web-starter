@@ -8,15 +8,16 @@ import {
   LOAD_REPOS,
   reposLoaded,
   repoLoadingError
-} from '../../ducks/global';
+} from '../ducks/global';
 
-import request from '../../utils/request';
-import { makeSelectUsername } from './selectors';
+import request from '../utils/request';
+import { makeSelectUsername } from '../views/HomePage/selectors';
 
 /**
  * Github repos request/response handler
  */
 export function* getRepos () {
+  console.log('getRepos');
   // Select username from store
   const username = yield select(makeSelectUsername());
   const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
@@ -45,6 +46,4 @@ export function* githubData () {
 }
 
 // Bootstrap sagas
-export default [
-  githubData
-];
+export default githubData;

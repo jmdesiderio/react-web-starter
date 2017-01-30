@@ -11,9 +11,9 @@ import {
   LOAD_REPOS,
   reposLoaded,
   repoLoadingError
-} from '../../ducks/global';
+} from '../ducks/global';
 
-import { getRepos, githubData } from './sagas';
+import { getRepos, githubData } from './home';
 
 const username = 'mxstbr';
 
