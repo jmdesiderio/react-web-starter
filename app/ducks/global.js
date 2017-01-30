@@ -1,4 +1,8 @@
 import { fromJS } from 'immutable';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
+
+import request from '../utils/request';
+import { makeSelectUsername } from '../views/HomePage/selectors';
 
 // Action Types
 export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
@@ -17,7 +21,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export default function appReducer (state = initialState, action) {
+export default function globalReducer (state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
       return state
@@ -58,4 +62,21 @@ export function repoLoadingError (error) {
     type: LOAD_REPOS_ERROR,
     error
   };
+}
+
+// Sagas
+export function* getRepos () {
+  const username = yield select(makeSelectUsername());
+  const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
+
+  try {
+    const repos = yield call(request, requestURL);
+    yield put(reposLoaded(repos, username));
+  } catch (err) {
+    yield put(repoLoadingError(err));
+  }
+}
+
+export function* globalSaga () {
+  yield takeLatest(LOAD_REPOS, getRepos);
 }

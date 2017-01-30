@@ -7,21 +7,16 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import 'sanitize.css/sanitize.css';
 
-// Import selector for `syncHistoryWithStore`
 import { makeSelectLocationState } from 'containers/App/selectors';
-
-// Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
-
-// Import i18n messages
 import { translationMessages } from './i18n';
+
+import createRoutes from './routes';
+import configureStore from './store';
 
 // Import global styles and static files
 import './index-styles';
 import './static';
-
-import createRoutes from './routes';
-import configureStore from './store';
 
 const initialState = {};
 const store = configureStore(initialState, browserHistory);
