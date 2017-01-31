@@ -20,7 +20,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export function globalReducer (state = initialState, action) {
+export default function globalReducer (state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
       return state

@@ -9,7 +9,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export function homeReducer (state = initialState, action) {
+export default function homeReducer (state = initialState, action) {
   switch (action.type) {
     case CHANGE_USERNAME:
       return state

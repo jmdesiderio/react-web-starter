@@ -7,7 +7,7 @@ const routeInitialState = fromJS({
 });
 
 // Reducer
-export function routeReducer (state = routeInitialState, action) {
+export default function routeReducer (state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:

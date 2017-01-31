@@ -10,7 +10,7 @@ const initialState = fromJS({
 });
 
 // Reducer
-export function languageReducer (state = initialState, action) {
+export default function languageReducer (state = initialState, action) {
   switch (action.type) {
     case CHANGE_LOCALE:
       return state

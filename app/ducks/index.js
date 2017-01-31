@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux-immutable';
 
-import { globalReducer, globalSaga } from './global';
-import { homeReducer } from './home';
-import { languageReducer } from './language';
-import { routeReducer } from './route';
+import globalReducer, { globalSaga } from './global';
+import homeReducer from './home';
+import languageReducer from './language';
+import routeReducer from './route';
 
 export function rootReducer () {
   return combineReducers({
