@@ -1,14 +1,9 @@
-/*
- * FeaturesView
- *
- * List all the features
- */
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 
-import H1 from 'components/H1';
+import H1 from '../../components/H1';
 import messages from './messages';
 
 export const List = styled.ul`

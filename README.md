@@ -1,13 +1,12 @@
 ### TODO:
-- swap redux-saga out for redux-observable
 - Take out styled-components and add CSS Modules + autoprefixer
-- Update image-webpack-loader
-- Add server side rendering to express
 - Add stylelint and configure in lint-staged
+- Add redux-form
 - configure eslint
 - Add flow types
-- Add redux-form
-- swap yarn start commands so it is production
+- Add server side rendering to express
+- implement proper redux-observable fetch calls
+- update all docs
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>

@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
 
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
+import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../containers/App/selectors';
+import H2 from '../../components/H2';
+import ReposList from '../../components/ReposList';
 import messages from './messages';
 import { loadRepos } from '../../ducks/global';
 import { changeUsername } from '../../ducks/home';

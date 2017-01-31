@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import A from 'components/A';
-import LocaleToggle from 'components/LocaleToggle';
+import A from '../A';
+import LocaleToggle from '../LocaleToggle';
 import Wrapper from './Wrapper';
 import messages from './messages';
 

@@ -10,10 +10,10 @@ import { createStructuredSelector } from 'reselect';
 import { FormattedNumber } from 'react-intl';
 import styled from 'styled-components';
 
-import { makeSelectCurrentUser } from 'containers/App/selectors';
-import ListItem from 'components/ListItem';
-import NormalIssueIcon from 'components/IssueIcon';
-import A from 'components/A';
+import { makeSelectCurrentUser } from '../../containers/App/selectors';
+import ListItem from '../ListItem';
+import NormalIssueIcon from '../IssueIcon';
+import A from '../A';
 
 export const IssueIcon = styled(NormalIssueIcon)`
   fill: #ccc;

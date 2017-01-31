@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import styled from 'styled-components';
 
-import Toggle from 'components/Toggle';
+import Toggle from '../Toggle';
 import messages from './messages';
 import { appLocales } from '../../i18n';
 import { changeLocale } from '../../ducks/language';

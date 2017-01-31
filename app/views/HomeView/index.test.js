@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
 
-import ReposList from 'components/ReposList';
+import ReposList from '../../components/ReposList';
 import {
   HomeView,
   mapDispatchToProps,
