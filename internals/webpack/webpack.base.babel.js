@@ -25,7 +25,7 @@ module.exports = options => ({
               sourceMap: true,
               modules: true,
               importLoaders: 1,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
+              localIdentName: '[folder]__[local]__[hash:base64:5]'
             }
           },
           {

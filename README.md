@@ -1,5 +1,5 @@
 ### TODO:
-- Take out styled-components and add CSS Modules + autoprefixer
+- Take out styled-components and add CSS Modules
 - Extract css on prod build
 - Add stylelint and configure in lint-staged
 - Add redux-form
