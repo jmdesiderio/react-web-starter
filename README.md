@@ -4,6 +4,7 @@
 - Update image-webpack-loader
 - Add server side rendering to express
 - Add stylelint and configure in lint-staged
+- configure eslint
 - Add flow types
 - Add redux-form
 - swap yarn start commands so it is production
