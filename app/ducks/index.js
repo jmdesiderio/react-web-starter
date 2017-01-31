@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux-immutable';
+import { combineEpics } from 'redux-observable';
 
-import globalReducer, { globalSaga } from './global';
+import globalReducer, { getReposEpic } from './global';
 import homeReducer from './home';
 import languageReducer from './language';
 import routeReducer from './route';
@@ -14,8 +15,8 @@ export function rootReducer () {
   });
 }
 
-export function* rootSaga () {
-  yield [
-    globalSaga()
-  ];
+export function rootEpic () {
+  return combineEpics(
+    getReposEpic
+  );
 }

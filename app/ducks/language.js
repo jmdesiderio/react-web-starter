@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 
 // Action Types
 export const DEFAULT_LOCALE = 'en';
-export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE';
+export const CHANGE_LOCALE = 'app/language/CHANGE_LOCALE';
 
 // Initial State
 const initialState = fromJS({
@@ -14,7 +14,7 @@ export default function languageReducer (state = initialState, action) {
   switch (action.type) {
     case CHANGE_LOCALE:
       return state
-        .set('locale', action.locale);
+        .set('locale', action.payload.locale);
     default:
       return state;
   }
@@ -24,6 +24,8 @@ export default function languageReducer (state = initialState, action) {
 export function changeLocale (languageLocale) {
   return {
     type: CHANGE_LOCALE,
-    locale: languageLocale
+    payload: {
+      locale: languageLocale
+    }
   };
 }

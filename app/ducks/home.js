@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 // Action Types
-export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+export const CHANGE_USERNAME = 'app/home/CHANGE_USERNAME';
 
 // Initial State
 const initialState = fromJS({
@@ -13,7 +13,7 @@ export default function homeReducer (state = initialState, action) {
   switch (action.type) {
     case CHANGE_USERNAME:
       return state
-        .set('username', action.name.replace(/@/gi, ''));
+        .set('username', action.payload.name.replace(/@/gi, ''));
     default:
       return state;
   }
@@ -23,6 +23,8 @@ export default function homeReducer (state = initialState, action) {
 export function changeUsername (name) {
   return {
     type: CHANGE_USERNAME,
-    name
+    payload: {
+      name
+    }
   };
 }

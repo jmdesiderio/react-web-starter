@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
-import createSagaMiddleware from 'redux-saga';
+import { createEpicMiddleware } from 'redux-observable';
 
-import { rootReducer, rootSaga } from './ducks';
+import { rootReducer, rootEpic } from './ducks';
 
-const sagaMiddleware = createSagaMiddleware();
+const epicMiddleware = createEpicMiddleware(rootEpic());
 
 export default function configureStore (initialState = {}, history) {
   const middlewares = applyMiddleware(
-    sagaMiddleware,
+    epicMiddleware,
     routerMiddleware(history)
   );
 
@@ -27,15 +27,12 @@ export default function configureStore (initialState = {}, history) {
     composeEnhancers(middlewares)
   );
 
-  // Extensions
-  sagaMiddleware.run(rootSaga);
-
   /* istanbul ignore next */
   if (module.hot) {
     module.hot.accept('./ducks', () => {
       import('./ducks').then(rootReducerModule => {
-        const nextRootReducer = rootReducerModule.default;
-        store.replaceReducer(nextRootReducer());
+        const nextRootReducer = rootReducerModule.rootReducer;
+        store.replaceReducer(nextRootReducer);
       });
     });
   }

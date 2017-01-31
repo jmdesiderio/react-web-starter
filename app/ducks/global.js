@@ -1,13 +1,10 @@
 import { fromJS } from 'immutable';
-import { call, put, select, takeLatest } from 'redux-saga/effects';
-
-import request from '../utils/request';
-import { makeSelectUsername } from '../views/HomeView/selectors';
+import { ajax } from 'rxjs/observable/dom/ajax';
 
 // Action Types
-export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
-export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
-export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const LOAD_REPOS = 'app/global/LOAD_REPOS';
+export const LOAD_REPOS_SUCCESS = 'app/global/LOAD_REPOS_SUCCESS';
+export const LOAD_REPOS_ERROR = 'app/global/LOAD_REPOS_ERROR';
 
 // Initial State
 const initialState = fromJS({
@@ -29,12 +26,12 @@ export default function globalReducer (state = initialState, action) {
         .setIn(['userData', 'repositories'], false);
     case LOAD_REPOS_SUCCESS:
       return state
-        .setIn(['userData', 'repositories'], action.repos)
+        .setIn(['userData', 'repositories'], action.payload.repos)
         .set('loading', false)
-        .set('currentUser', action.username);
+        .set('currentUser', action.payload.username);
     case LOAD_REPOS_ERROR:
       return state
-        .set('error', action.error)
+        .set('error', action.payload.error)
         .set('loading', false);
     default:
       return state;
@@ -42,40 +39,41 @@ export default function globalReducer (state = initialState, action) {
 }
 
 // Actions
-export function loadRepos () {
+export function loadRepos (username) {
   return {
-    type: LOAD_REPOS
+    type: LOAD_REPOS,
+    payload: {
+      username
+    }
   };
 }
 
-export function reposLoaded (repos, username) {
+export function reposLoaded (username, repos) {
   return {
     type: LOAD_REPOS_SUCCESS,
-    repos,
-    username
+    payload: {
+      username,
+      repos
+    }
   };
 }
 
 export function repoLoadingError (error) {
   return {
     type: LOAD_REPOS_ERROR,
-    error
+    payload: {
+      error
+    }
   };
 }
 
 // Sagas
-export function* getRepos () {
-  const username = yield select(makeSelectUsername());
-  const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
-
-  try {
-    const repos = yield call(request, requestURL);
-    yield put(reposLoaded(repos, username));
-  } catch (err) {
-    yield put(repoLoadingError(err));
-  }
-}
-
-export function* globalSaga () {
-  yield takeLatest(LOAD_REPOS, getRepos);
+export function getReposEpic (action$) {
+  return action$.ofType(LOAD_REPOS)
+    .map(action => action.payload.username)
+    .switchMap(username =>
+      ajax.getJSON(`https://api.github.com/users/${username}/repos?type=all&sort=updated`)
+        .map(reposLoaded.bind(null, username))
+        .catch(err => repoLoadingError(err))
+    );
 }

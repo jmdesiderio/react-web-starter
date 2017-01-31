@@ -1,7 +1,3 @@
-/**
- * Test the HomeView
- */
-
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { IntlProvider } from 'react-intl';
