@@ -1,0 +1,26 @@
+.atPrefix {
+  color: black;
+  margin-left: 0.4em;
+}
+
+.section {
+  margin: 3em auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.centeredSection {
+  composes: section;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 1em;
+}
+
+.input {
+  outline: none;
+  border-bottom: 1px dotted #999;
+}

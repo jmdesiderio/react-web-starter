@@ -16,9 +16,30 @@ module.exports = options => ({
         options: options.babelQuery
       },
       {
-        test: /\.css$/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader']
+        test: /\.(scss|css)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => ([
+                require('autoprefixer')({ // eslint-disable-line global-require
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+                })
+              ])
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -27,9 +48,7 @@ module.exports = options => ({
       {
         test: /\.(jpg|png|gif)$/,
         use: [
-          {
-            loader: 'file-loader'
-          },
+          'file-loader',
           {
             loader: 'image-webpack-loader',
             options: {

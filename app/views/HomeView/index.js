@@ -3,42 +3,16 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import styled from 'styled-components';
 
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../containers/App/selectors';
 import H2 from '../../components/H2';
 import ReposList from '../../components/ReposList';
-import messages from './messages';
 import { loadRepos } from '../../ducks/global';
 import { changeUsername } from '../../ducks/home';
 import { makeSelectUsername } from './selectors';
 
-export const AtPrefix = styled.span`
-  color: black;
-  margin-left: 0.4em;
-`;
-
-export const Section = styled.section`
-  margin: 3em auto;
-
-  &:first-child {
-    margin-top: 0;
-  }
-`;
-
-export const CenteredSection = styled(Section)`
-  text-align: center;
-`;
-
-export const Form = styled.form`
-  margin-bottom: 1em;
-`;
-
-export const Input = styled.input`
-  outline: none;
-  border-bottom: 1px dotted #999;
-`;
-
+import messages from './messages';
+import s from './styles.scss';
 
 export class HomeView extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount () {
@@ -64,25 +38,26 @@ export class HomeView extends PureComponent { // eslint-disable-line react/prefe
           ]}
         />
         <div>
-          <CenteredSection>
+          <section className={s.centeredSection}>
             <H2>
               <FormattedMessage {...messages.startProjectHeader} />
             </H2>
             <p>
               <FormattedMessage {...messages.startProjectMessage} />
             </p>
-          </CenteredSection>
-          <Section>
+          </section>
+          <section className={s.section}>
             <H2>
               <FormattedMessage {...messages.trymeHeader} />
             </H2>
-            <Form onSubmit={this.props.onSubmitForm}>
+            <form className={s.form} onSubmit={this.props.onSubmitForm}>
               <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
+                <span className={s.atPrefix}>
                   <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
-                <Input
+                </span>
+                <input
+                  className={s.input}
                   id="username"
                   type="text"
                   placeholder="mxstbr"
@@ -90,9 +65,9 @@ export class HomeView extends PureComponent { // eslint-disable-line react/prefe
                   onChange={this.props.onChangeUsername}
                 />
               </label>
-            </Form>
+            </form>
             <ReposList {...reposListProps} />
-          </Section>
+          </section>
         </div>
       </article>
     );

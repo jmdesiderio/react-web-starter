@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
 
 import H1 from '../../components/H1';
 import messages from './messages';
-
-export const List = styled.ul`
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  padding-left: 1.75em;
-`;
-
-export const ListItem = styled.li`
-  margin: 1em 0;
-`;
-
-export const ListItemTitle = styled.p`
-  font-weight: bold;
-`;
+import s from './styles.scss';
 
 export default class FeaturesView extends Component { // eslint-disable-line react/prefer-stateless-function
   shouldComponentUpdate () {
@@ -36,52 +23,52 @@ export default class FeaturesView extends Component { // eslint-disable-line rea
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
-        <List>
-          <ListItem>
-            <ListItemTitle>
+        <ul className={s.list}>
+          <li className={s.listItem}>
+            <p className={s.listItemTitle}>
               <FormattedMessage {...messages.scaffoldingHeader} />
-            </ListItemTitle>
+            </p>
             <p>
               <FormattedMessage {...messages.scaffoldingMessage} />
             </p>
-          </ListItem>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
+          <li className={s.listItem}>
+            <p className={s.listItemTitle}>
               <FormattedMessage {...messages.feedbackHeader} />
-            </ListItemTitle>
+            </p>
             <p>
               <FormattedMessage {...messages.feedbackMessage} />
             </p>
-          </ListItem>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
+          <li className={s.listItem}>
+            <p className={s.listItemTitle}>
               <FormattedMessage {...messages.routingHeader} />
-            </ListItemTitle>
+            </p>
             <p>
               <FormattedMessage {...messages.routingMessage} />
             </p>
-          </ListItem>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
+          <li className={s.listItem}>
+            <p className={s.listItemTitle}>
               <FormattedMessage {...messages.networkHeader} />
-            </ListItemTitle>
+            </p>
             <p>
               <FormattedMessage {...messages.networkMessage} />
             </p>
-          </ListItem>
+          </li>
 
-          <ListItem>
-            <ListItemTitle>
+          <li className={s.listItem}>
+            <p className={s.listItemTitle}>
               <FormattedMessage {...messages.intlHeader} />
-            </ListItemTitle>
+            </p>
             <p>
               <FormattedMessage {...messages.intlMessage} />
             </p>
-          </ListItem>
-        </List>
+          </li>
+        </ul>
       </div>
     );
   }

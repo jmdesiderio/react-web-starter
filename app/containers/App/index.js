@@ -1,23 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import 'sanitize.css/sanitize.css';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import withProgressBar from '../../components/ProgressBar';
-
-const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
-`;
+import s from './styles.scss';
 
 export function App (props) {
   return (
-    <AppWrapper>
+    <div className={s.wrapper}>
       <Helmet
         titleTemplate="%s - React.js Boilerplate"
         defaultTitle="React.js Boilerplate"
@@ -28,7 +20,7 @@ export function App (props) {
       <Header />
       {React.Children.toArray(props.children)}
       <Footer />
-    </AppWrapper>
+    </div>
   );
 }
 

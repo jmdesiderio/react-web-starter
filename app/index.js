@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
-import 'sanitize.css/sanitize.css';
 
 import { makeSelectLocationState } from './containers/App/selectors';
 import LanguageProvider from './containers/LanguageProvider';
@@ -16,7 +15,6 @@ import createRoutes from './routes';
 import configureStore from './store';
 
 // Import global styles and static files
-import './index-styles';
 import './static';
 
 const initialState = {};
