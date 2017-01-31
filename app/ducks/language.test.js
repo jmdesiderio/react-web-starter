@@ -1,8 +1,7 @@
 import { fromJS } from 'immutable';
 
-import {
+import languageReducer, {
   CHANGE_LOCALE,
-  languageReducer,
   changeLocale
 } from './language';
 

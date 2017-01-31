@@ -1,11 +1,10 @@
 import { fromJS } from 'immutable';
 import { put, takeLatest } from 'redux-saga/effects';
 
-import {
+import globalReducer, {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
-  globalReducer,
   loadRepos,
   reposLoaded,
   repoLoadingError,

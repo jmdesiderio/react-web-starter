@@ -1,8 +1,7 @@
 import { fromJS } from 'immutable';
 
-import {
+import homeReducer, {
   CHANGE_USERNAME,
-  homeReducer,
   changeUsername
 } from './home';
 
