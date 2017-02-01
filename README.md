@@ -15,7 +15,7 @@
 - `components` - react components grouped by small pieces of functionality (e.g. Header, Footer)
 - `containers` - containers used to wrap groups of components (e.g. App, Providers)
 - `ducks` - redux code using the 'ducks' pattern (e.g. ActionTypes, Reducers, Actions, Epics)
-- `elements` - groups of react components used in place of html elements. multiple per file since they are typically small (e.g. Button, Img, Input)
+- `elements` - groups of react components used in place of html elements. multiple per file since they are typically small (e.g. Button, Img, Field, Input)
 - `forms` - form groups with validations and submit handlers using redux-form (e.g Login Form, Billing Address Form)
 - `static` - static files that get copied to root folder on build.  need to be registered in index.js within folder (e.g. favicon.ico, .htaccess)
 - `styles` - base global styles and importable styles in sass (e.g. variables, base)
