@@ -1,23 +1,23 @@
 .root {
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: space-between;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 .issueLink {
-  height: 100%;
+  align-items: center;
   color: black;
   display: flex;
-  align-items: center;
+  height: 100%;
   justify-content: center;
 }
 
 .repoLink {
-  height: 100%;
+  align-items: center;
   color: black;
   display: flex;
-  align-items: center;
+  height: 100%;
   width: 100%;
 }
 

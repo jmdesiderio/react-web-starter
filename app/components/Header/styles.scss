@@ -3,21 +3,21 @@
 }
 
 .link {
-  display: inline-flex;
-  padding: 0.25em 2em;
-  margin: 1em;
-  text-decoration: none;
+  border: 2px solid #41addd;
   border-radius: 4px;
+  color: #41addd;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 1em;
+  outline: 0;
+  padding: 0.25em 2em;
+  text-decoration: none;
   -webkit-touch-callout: none;
   user-select: none;
-  cursor: pointer;
-  outline: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
 
   &:active {
     background: #41addd;
@@ -30,7 +30,7 @@
 }
 
 .img {
-  width: 100%;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  width: 100%;
 }
