@@ -8,31 +8,28 @@
 
 import React, { PropTypes, Children } from 'react';
 
-import A from './A';
-import StyledButton from './StyledButton';
-import Wrapper from './Wrapper';
+import s from './styles.scss';
 
 function Button (props) {
-  // Render an anchor tag
   let button = (
-    <A href={props.href} onClick={props.onClick}>
+    <a className={s.button} href={props.href} onClick={props.onClick}>
       {Children.toArray(props.children)}
-    </A>
+    </a>
   );
 
   // If the Button has a handleRoute prop, we want to render a button
   if (props.handleRoute) {
     button = (
-      <StyledButton onClick={props.handleRoute}>
+      <button className={s.button} onClick={props.handleRoute}>
         {Children.toArray(props.children)}
-      </StyledButton>
+      </button>
     );
   }
 
   return (
-    <Wrapper>
+    <div className={s.root}>
       {button}
-    </Wrapper>
+    </div>
   );
 }
 

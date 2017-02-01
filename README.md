@@ -10,6 +10,7 @@
 - fix tests so that prod builds
 - change jsx-first-prop-new-line to have first prop on same line
 - update all docs
+- add root relative module loading
 
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>

@@ -1,9 +1,11 @@
-import { css } from 'styled-components';
+.a {
+  padding: 2em 0;
+}
 
-const buttonStyles = css`
-  display: inline-block;
-  box-sizing: border-box;
+.link {
+  display: inline-flex;
   padding: 0.25em 2em;
+  margin: 1em;
   text-decoration: none;
   border-radius: 4px;
   -webkit-font-smoothing: antialiased;
@@ -14,13 +16,21 @@ const buttonStyles = css`
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
+  border: 2px solid #41ADDD;
+  color: #41ADDD;
 
   &:active {
-    background: #41addd;
-    color: #fff;
+    background: #41ADDD;
+    color: #FFF;
   }
-`;
+}
 
-export default buttonStyles;
+.navBar {
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}

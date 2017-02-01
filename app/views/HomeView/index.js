@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../containers/App/selectors';
-import H2 from '../../components/H2';
 import ReposList from '../../components/ReposList';
 import { loadRepos } from '../../ducks/global';
 import { changeUsername } from '../../ducks/home';
@@ -39,17 +38,17 @@ export class HomeView extends PureComponent { // eslint-disable-line react/prefe
         />
         <div>
           <section className={s.centeredSection}>
-            <H2>
+            <h2>
               <FormattedMessage {...messages.startProjectHeader} />
-            </H2>
+            </h2>
             <p>
               <FormattedMessage {...messages.startProjectMessage} />
             </p>
           </section>
           <section className={s.section}>
-            <H2>
+            <h2>
               <FormattedMessage {...messages.trymeHeader} />
-            </H2>
+            </h2>
             <form className={s.form} onSubmit={this.props.onSubmitForm}>
               <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />

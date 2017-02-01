@@ -74,6 +74,6 @@ export function getReposEpic (action$) {
     .switchMap(username =>
       ajax.getJSON(`https://api.github.com/users/${username}/repos?type=all&sort=updated`)
         .map(reposLoaded.bind(null, username))
-        // .catch(err => repoLoadingError(err))
+        .catch(err => repoLoadingError(err))
     );
 }

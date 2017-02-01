@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
+.root {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -8,6 +6,13 @@ const Wrapper = styled.div`
   border: 1px solid #ccc;
   border-radius: 3px;
   overflow: hidden;
-`;
+}
 
-export default Wrapper;
+.list {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  max-height: 30em;
+  overflow-y: auto;
+  padding: 0 1em;
+}

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import Select from './Select';
 import ToggleOption from '../ToggleOption';
+import s from './styles.scss';
 
 function Toggle (props) {
   let content = (<option>--</option>);
@@ -14,17 +14,17 @@ function Toggle (props) {
   }
 
   return (
-    <Select value={props.value} onChange={props.onToggle}>
+    <select className={s.root} value={props.value} onChange={props.onToggle}>
       {content}
-    </Select>
+    </select>
   );
 }
 
 Toggle.propTypes = {
-  onToggle: React.PropTypes.func,
-  values: React.PropTypes.array,
-  value: React.PropTypes.string,
-  messages: React.PropTypes.object
+  onToggle: PropTypes.func,
+  values: PropTypes.array,
+  value: PropTypes.string,
+  messages: PropTypes.object
 };
 
 export default Toggle;

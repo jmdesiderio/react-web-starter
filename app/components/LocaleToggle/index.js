@@ -1,24 +1,20 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import styled from 'styled-components';
 
 import Toggle from '../Toggle';
 import messages from './messages';
 import { appLocales } from '../../i18n';
 import { changeLocale } from '../../ducks/language';
 import { makeSelectLocale } from '../../containers/LanguageProvider/selectors';
-
-export const Wrapper = styled.div`
-  padding: 2px;
-`;
+import s from './styles.scss';
 
 export class LocaleToggle extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   render () {
     return (
-      <Wrapper>
+      <div className={s.root}>
         <Toggle value={this.props.locale} values={appLocales} messages={messages} onToggle={this.props.onLocaleToggle} />
-      </Wrapper>
+      </div>
     );
   }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
-import H1 from '../../components/H1';
 import messages from './messages';
 import s from './styles.scss';
 
@@ -20,9 +19,9 @@ export default class FeaturesView extends Component { // eslint-disable-line rea
             { name: 'description', content: 'Feature page of React.js Boilerplate application' }
           ]}
         />
-        <H1>
+        <h1>
           <FormattedMessage {...messages.header} />
-        </H1>
+        </h1>
         <ul className={s.list}>
           <li className={s.listItem}>
             <p className={s.listItemTitle}>
