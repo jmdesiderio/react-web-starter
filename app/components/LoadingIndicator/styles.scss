@@ -4,6 +4,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -19,7 +20,7 @@
 .loading {
   animation: spin 1s infinite linear;
   border-radius: 50%;
-  border: .5rem solid $gray;
+  border: 0.5rem solid $gray;
   border-top-color: $black;
   height: 100%;
   width: 100%;

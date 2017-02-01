@@ -1,14 +1,14 @@
 ### TODO:
 - Add stylelint and configure in lint-staged
 - Add redux-form
-- configure eslint
 - Add flow types
 - Add server side rendering to express
 - implement proper redux-observable fetch calls
-- fix tests so that prod builds
-- change jsx-first-prop-new-line to have first prop on same line
 - Extract css on prod build
 - Optimizing code chunking
+- fix tests so that prod builds
+- configure eslint to standard
+- configure stylelint to scsss-lint
 - update all docs
 - add root relative module loading
 
