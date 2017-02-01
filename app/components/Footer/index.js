@@ -15,12 +15,10 @@ function Footer () {
         <LocaleToggle />
       </section>
       <section>
-        <FormattedMessage
-          {...messages.authorMessage}
+        <FormattedMessage {...messages.authorMessage}
           values={{
             author: <a href="https://twitter.com/mxstbr">Max Stoiber</a>
-          }}
-        />
+          }} />
       </section>
     </footer>
   );

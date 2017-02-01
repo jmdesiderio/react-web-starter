@@ -60,8 +60,9 @@
     "react/forbid-prop-types": 0,
     "react/jsx-first-prop-new-line": [
       2,
-      "multiline"
+      "never"
     ],
+    "react/jsx-closing-bracket-location": [2, "after-props"],
     "react/jsx-filename-extension": 0,
     "react/jsx-no-target-blank": 0,
     "react/no-array-index-key": 0,

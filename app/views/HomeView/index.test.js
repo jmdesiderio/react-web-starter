@@ -27,11 +27,9 @@ describe('<HomeView />', () => {
     const submitSpy = jest.fn();
     mount(
       <IntlProvider locale="en">
-        <HomeView
-          username="Not Empty"
+        <HomeView username="Not Empty"
           onChangeUsername={() => {}}
-          onSubmitForm={submitSpy}
-        />
+          onSubmitForm={submitSpy} />
       </IntlProvider>
     );
     expect(submitSpy).toHaveBeenCalled();

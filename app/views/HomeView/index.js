@@ -30,12 +30,10 @@ export class HomeView extends PureComponent { // eslint-disable-line react/prefe
 
     return (
       <article>
-        <Helmet
-          title="Home Page"
+        <Helmet title="Home Page"
           meta={[
             { name: 'description', content: 'A React.js Boilerplate application homepage' }
-          ]}
-        />
+          ]} />
         <div>
           <section className={s.centeredSection}>
             <h2>
@@ -55,14 +53,12 @@ export class HomeView extends PureComponent { // eslint-disable-line react/prefe
                 <span className={s.atPrefix}>
                   <FormattedMessage {...messages.trymeAtPrefix} />
                 </span>
-                <input
-                  className={s.input}
+                <input className={s.input}
                   id="username"
                   type="text"
                   placeholder="mxstbr"
                   value={this.props.username}
-                  onChange={this.props.onChangeUsername}
-                />
+                  onChange={this.props.onChangeUsername} />
               </label>
             </form>
             <ReposList {...reposListProps} />

@@ -1,5 +1,4 @@
 ### TODO:
-- Extract css on prod build
 - Add stylelint and configure in lint-staged
 - Add redux-form
 - configure eslint
@@ -8,6 +7,8 @@
 - implement proper redux-observable fetch calls
 - fix tests so that prod builds
 - change jsx-first-prop-new-line to have first prop on same line
+- Extract css on prod build
+- Optimizing code chunking
 - update all docs
 - add root relative module loading
 

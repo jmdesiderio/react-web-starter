@@ -1,12 +1,7 @@
-/**
- * Testing the NotFoundView
- */
-
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
 
-import H1 from '../../components/H1';
 import NotFound from './index';
 
 describe('<NotFound />', () => {
@@ -15,11 +10,9 @@ describe('<NotFound />', () => {
       <NotFound />
     );
     expect(renderedComponent.contains(
-      <H1>
-        <FormattedMessage
-          id="boilerplate.containers.NotFoundView.header"
-          defaultMessage={'Page not found.'}
-        />
-      </H1>)).toEqual(true);
+      <h1>
+        <FormattedMessage id="boilerplate.containers.NotFoundView.header"
+          defaultMessage={'Page not found.'} />
+      </h1>)).toEqual(true);
   });
 });

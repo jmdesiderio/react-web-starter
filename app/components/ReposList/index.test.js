@@ -18,10 +18,8 @@ describe('<ReposList />', () => {
   it('should render an error if loading failed', () => {
     const renderedComponent = mount(
       <IntlProvider locale="en">
-        <ReposList
-          loading={false}
-          error={{ message: 'Loading failed!' }}
-        />
+        <ReposList loading={false}
+          error={{ message: 'Loading failed!' }} />
       </IntlProvider>
     );
     expect(renderedComponent.text()).toMatch(/Something went wrong/);
@@ -38,10 +36,8 @@ describe('<ReposList />', () => {
       full_name: 'react-boilerplate/react-boilerplate'
     }];
     const renderedComponent = shallow(
-      <ReposList
-        repos={repos}
-        error={false}
-      />
+      <ReposList repos={repos}
+        error={false} />
     );
 
     expect(renderedComponent.contains(<List items={repos} component={RepoListItem} />)).toEqual(true);
@@ -49,11 +45,9 @@ describe('<ReposList />', () => {
 
   it('should not render anything if nothing interesting is provided', () => {
     const renderedComponent = shallow(
-      <ReposList
-        repos={false}
+      <ReposList repos={false}
         error={false}
-        loading={false}
-      />
+        loading={false} />
     );
 
     expect(renderedComponent.html()).toEqual(null);

@@ -13,12 +13,10 @@ export default class FeaturesView extends Component { // eslint-disable-line rea
   render () {
     return (
       <div>
-        <Helmet
-          title="Feature Page"
+        <Helmet title="Feature Page"
           meta={[
             { name: 'description', content: 'Feature page of React.js Boilerplate application' }
-          ]}
-        />
+          ]} />
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
