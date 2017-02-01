@@ -1,5 +1,4 @@
-### TODO:
-- Add stylelint and configure in lint-staged
+## TODO:
 - Add redux-form
 - Add flow types
 - Add server side rendering to express
@@ -8,10 +7,29 @@
 - Optimizing code chunking
 - fix tests so that prod builds
 - configure eslint to standard
-- configure stylelint to scsss-lint
+- configure stylelint to scss-lint
 - update all docs
 - add root relative module loading
 
+### Project Structure
+- `components` - react components grouped by small pieces of functionality (e.g. Header, Footer)
+- `containers` - containers used to wrap groups of components (e.g. App, Providers)
+- `ducks` - redux code using the 'ducks' pattern (e.g. ActionTypes, Reducers, Actions, Epics)
+- `elements` - groups of react components used in place of html elements. multiple per file since they are typically small (e.g. Button, Img, Input)
+- `forms` - form groups with validations and submit handlers using redux-form (e.g Login Form, Billing Address Form)
+- `static` - static files that get copied to root folder on build.  need to be registered in index.js within folder (e.g. favicon.ico, .htaccess)
+- `styles` - base global styles and importable styles in sass (e.g. variables, base)
+- `translations` - json files that contain all messages across site (e.g. en, de)
+- `utils` - pure javascript functions to are used to perform repetitive tasks (e.g. request, auth)
+- `views` - all top level components rendered on a route change. imported in route.js (e.g. Home, About, Contact, Collection)
+- `i18n.js` - setup the i18n language files and locale data for app
+- `index.html` - static html page that is served by express. is injected with links to compiled css and js files
+- `index.js` - entry point for app. does a small amount of config and creation
+- `routes.js` - contains all routes for the app
+- `store.js` - configures redux store with reducers, observables, dev tools and hot reloading
+
+
+## Legacy
 
 <div align="center"><strong>Start your next react project in seconds</strong></div>
 <div align="center">A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</div>

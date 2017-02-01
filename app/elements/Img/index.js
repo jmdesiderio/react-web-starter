@@ -1,10 +1,3 @@
-/**
- *
- * Img.react.js
- *
- * Renders an image, enforcing the usage of the alt="" tag
- */
-
 import React, { PropTypes } from 'react';
 
 function Img (props) {
@@ -13,7 +6,6 @@ function Img (props) {
   );
 }
 
-// We require the use of src and alt, only enforced by react in dev mode
 Img.propTypes = {
   src: PropTypes.oneOfType([
     PropTypes.string,
