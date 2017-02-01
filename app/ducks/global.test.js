@@ -1,5 +1,4 @@
 import { fromJS } from 'immutable';
-import { put, takeLatest } from 'redux-saga/effects';
 
 import globalReducer, {
   LOAD_REPOS,
@@ -129,13 +128,13 @@ describe('getRepos Saga', () => {
       name: 'Second repo'
     }];
     const putDescriptor = getReposGenerator.next(response).value;
-    expect(putDescriptor).toEqual(put(reposLoaded(response, username)));
+    expect(putDescriptor).toEqual(reposLoaded(response, username));
   });
 
   it('should call the repoLoadingError action if the response errors', () => {
     const response = new Error('Some error');
     const putDescriptor = getReposGenerator.throw(response).value;
-    expect(putDescriptor).toEqual(put(repoLoadingError(response)));
+    expect(putDescriptor).toEqual(repoLoadingError(response));
   });
 });
 
@@ -144,6 +143,6 @@ describe('globalSaga Saga', () => {
 
   it('should start task to watch for LOAD_REPOS action', () => {
     const takeLatestDescriptor = homeDataSaga.next().value;
-    expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_REPOS, getRepos));
+    expect(takeLatestDescriptor).toEqual(LOAD_REPOS, getRepos);
   });
 });

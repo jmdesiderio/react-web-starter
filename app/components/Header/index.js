@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
 
-import Img from '../../elements/Img';
+import { Img } from '../../elements/Imgs';
 import Banner from './banner.jpg';
 import messages from './messages';
 import s from './styles.scss';

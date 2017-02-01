@@ -5,6 +5,7 @@
   ],
   "rules": {
     "order/declaration-block-properties-alphabetical-order": true,
+    "number-leading-zero": "never",
     "property-no-unknown": [
       true,
       {
