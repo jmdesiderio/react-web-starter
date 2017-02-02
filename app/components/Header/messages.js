@@ -13,5 +13,9 @@ export default defineMessages({
   features: {
     id: 'boilerplate.components.Header.features',
     defaultMessage: 'Features'
+  },
+  login: {
+    id: 'boilerplate.components.Header.login',
+    defaultMessage: 'Login'
   }
 });

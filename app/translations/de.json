@@ -3,6 +3,7 @@
   "boilerplate.components.Footer.license.message": "Dieses Projekt wird unter der MIT-Lizenz veröffentlicht.",
   "boilerplate.components.Header.features": "",
   "boilerplate.components.Header.home": "",
+  "boilerplate.components.Header.login": "",
   "boilerplate.containers.FeaturesView.css.header": "",
   "boilerplate.containers.FeaturesView.css.message": "Die nächste Generation von CSS",
   "boilerplate.containers.FeaturesView.feedback.header": "Sofortiges Feedback",

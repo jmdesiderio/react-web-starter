@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .button {
   background-image: linear-gradient($red, darken($red, 8%));
   border: 0;

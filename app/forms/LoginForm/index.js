@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { withRouter } from 'react-router';
 import { compose } from 'redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form/immutable';
 
 import { Checkbox, Input } from '../../elements/Fields';
 import { Button } from '../../elements/Buttons';
@@ -23,7 +22,7 @@ class LoginForm extends Component {
     return this.props.sendRequest({
       variables: input
     }).then(() => {
-      this.props.router.push('/admin/dashboard');
+      console.log('success'); // eslint-disable-line no-console
     }).catch(err => {
       this.setState({ errors: [err.message] });
     });
@@ -65,25 +64,23 @@ LoginForm.propTypes = {
   handleSubmit: PropTypes.func,
   invalid: PropTypes.bool,
   pristine: PropTypes.bool,
-  router: PropTypes.object,
   sendRequest: PropTypes.func,
   submitting: PropTypes.bool
 };
 
 const validate = values => {
   const errors = {};
-  if (!values.username) {
+  if (!values.get('username')) {
     errors.username = 'Username is required';
   }
-  if (!values.password) {
+  if (!values.get('password')) {
     errors.password = 'Password is required';
-  } else if (values.password.length < 8) {
+  } else if (values.get('password').length < 8) {
     errors.password = 'Password must be 8 or more characters';
   }
   return errors;
 };
 
 export default compose(
-  reduxForm({ form: 'LoginForm', validate }),
-  withRouter
+  reduxForm({ form: 'LoginForm', validate })
 )(LoginForm);

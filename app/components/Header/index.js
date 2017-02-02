@@ -21,6 +21,9 @@ class Header extends Component { // eslint-disable-line react/prefer-stateless-f
           <Link className={s.link} to="/features">
             <FormattedMessage {...messages.features} />
           </Link>
+          <Link className={s.link} to="/login">
+            <FormattedMessage {...messages.login} />
+          </Link>
         </div>
       </div>
     );
