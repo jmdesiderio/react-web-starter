@@ -8,6 +8,7 @@
 - fix tests so that prod builds
 - configure eslint to standard
 - configure stylelint to scss-lint
+- configure optimal webpack with tree shaking
 - update all docs
 - add root relative module loading
 - try to make hot module replacement smoother
