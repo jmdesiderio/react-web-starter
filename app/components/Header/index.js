@@ -1,33 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
 
 import { Img } from '../../elements/Imgs';
+
 import Banner from './banner.jpg';
 import messages from './messages';
 import s from './styles.scss';
 
-class Header extends Component { // eslint-disable-line react/prefer-stateless-function
-  render () {
-    return (
-      <div>
-        <a className={s.a} href="https://twitter.com/mxstbr">
-          <Img className={s.img} src={Banner} alt="react-boilerplate - Logo" />
-        </a>
-        <div className={s.navBar}>
-          <Link className={s.link} to="/">
-            <FormattedMessage {...messages.home} />
-          </Link>
-          <Link className={s.link} to="/features">
-            <FormattedMessage {...messages.features} />
-          </Link>
-          <Link className={s.link} to="/login">
-            <FormattedMessage {...messages.login} />
-          </Link>
-        </div>
-      </div>
-    );
-  }
-}
+const Header = () => (
+  <div>
+    <a className={s.a} href="https://twitter.com/mxstbr">
+      <Img className={s.img}
+        src={Banner}
+        alt="react-boilerplate - Logo" />
+    </a>
+    <div className={s.navBar}>
+      <Link className={s.link} to="/">
+        <FormattedMessage {...messages.home} />
+      </Link>
+      <Link className={s.link} to="/features">
+        <FormattedMessage {...messages.features} />
+      </Link>
+      <Link className={s.link} to="/login">
+        <FormattedMessage {...messages.login} />
+      </Link>
+    </div>
+  </div>
+);
 
 export default Header;

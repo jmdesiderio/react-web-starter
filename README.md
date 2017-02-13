@@ -1,5 +1,6 @@
 ## TODO:
-- Add redux-form
+- align component file layout to each other in folder
+- organize selectors
 - Add flow types
 - Add server side rendering to express
 - implement proper redux-observable fetch calls
@@ -12,7 +13,6 @@
 - update all docs
 - add root relative module loading
 - try to make hot module replacement smoother
-- align component file layout to each other in folder
 
 ### Project Structure
 - `components` - react components grouped by small pieces of functionality (e.g. Header, Footer)

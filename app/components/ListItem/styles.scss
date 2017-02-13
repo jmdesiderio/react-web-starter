@@ -1,8 +1,10 @@
+@import '../../styles/variables';
+
 .root {
   align-items: center;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $smoke;
   display: flex;
-  height: 3em;
+  height: 3rem;
   position: relative;
   width: 100%;
 

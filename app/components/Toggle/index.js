@@ -3,28 +3,27 @@ import React, { PropTypes } from 'react';
 import ToggleOption from '../ToggleOption';
 import s from './styles.scss';
 
-function Toggle (props) {
+const Toggle = ({ currentValue, messages, onToggle, values }) => {
   let content = (<option>--</option>);
 
-  // If we have items, render them
-  if (props.values) {
-    content = props.values.map(value => (
-      <ToggleOption key={value} value={value} message={props.messages[value]} />
+  if (values) {
+    content = values.map(value => (
+      <ToggleOption key={value} value={value} message={messages[value]} />
     ));
   }
 
   return (
-    <select className={s.root} value={props.value} onChange={props.onToggle}>
+    <select className={s.root} value={currentValue} onChange={onToggle}>
       {content}
     </select>
   );
-}
+};
 
 Toggle.propTypes = {
+  currentValue: PropTypes.string,
+  messages: PropTypes.object,
   onToggle: PropTypes.func,
   values: PropTypes.array,
-  value: PropTypes.string,
-  messages: PropTypes.object
 };
 
 export default Toggle;

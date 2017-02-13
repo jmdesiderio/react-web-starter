@@ -5,7 +5,7 @@ import ListItem from '../ListItem';
 import LoadingIndicator from '../LoadingIndicator';
 import RepoListItem from '../RepoListItem';
 
-function ReposList ({ loading, error, repos }) {
+const ReposList = ({ loading, error, repos }) => {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }
@@ -22,7 +22,7 @@ function ReposList ({ loading, error, repos }) {
   }
 
   return null;
-}
+};
 
 ReposList.propTypes = {
   loading: PropTypes.bool,

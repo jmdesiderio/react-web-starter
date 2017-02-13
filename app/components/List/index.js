@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 
 import s from './styles.scss';
 
-function List (props) {
-  const ComponentToRender = props.component;
+const List = ({ component, items }) => {
+  const ComponentToRender = component;
   let content = (<div></div>);
 
   // If we have items, render them
-  if (props.items) {
-    content = props.items.map((item, index) => (
+  if (items) {
+    content = items.map((item, index) => (
       <ComponentToRender key={`item-${index}`} item={item} />
     ));
   } else {
@@ -23,7 +23,7 @@ function List (props) {
       </ul>
     </div>
   );
-}
+};
 
 List.propTypes = {
   component: PropTypes.func.isRequired,
