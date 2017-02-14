@@ -4,7 +4,6 @@ import React from 'react'
 import { IndexRoute, Route } from 'react-router'
 
 import App from './containers/App'
-
 import HomeView from './views/HomeView'
 import FeaturesView from './views/FeaturesView'
 import LoginView from './views/LoginView'

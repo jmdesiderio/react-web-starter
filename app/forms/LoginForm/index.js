@@ -13,20 +13,16 @@ class LoginForm extends Component {
     super(props)
 
     this.state = {
-      errors: [],
+      errors: []
     }
 
     this.submitHandler = this.submitHandler.bind(this)
   }
 
   submitHandler (input) {
-    return this.props.sendRequest({
-      variables: input
-    }).then(() => {
-      console.log('success') // eslint-disable-line no-console
-    }).catch(err => {
-      this.setState({ errors: [err.message] })
-    })
+    return this.props.sendRequest({ variables: input })
+      .then(() => console.log('success')) // eslint-disable-line no-console
+      .catch(err => this.setState({ errors: [err.message] }))
   }
 
   render () {

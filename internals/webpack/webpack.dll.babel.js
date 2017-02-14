@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 /**
  * WEBPACK DLL GENERATOR
  *
@@ -9,8 +10,10 @@
  */
 
 const { join } = require('path')
-const defaults = require('lodash/defaultsDeep')
+
 const webpack = require('webpack')
+const defaults = require('lodash/defaultsDeep')
+
 const pkg = require(join(process.cwd(), 'package.json'))
 const dllPlugin = require('../config').dllPlugin
 

@@ -3,6 +3,9 @@ import { shallow, mount } from 'enzyme'
 import { IntlProvider } from 'react-intl'
 
 import ReposList from '../../components/ReposList'
+import { loadRepos } from '../../ducks/global'
+import { changeUsername } from '../../ducks/home'
+
 import {
   HomeView,
   mapDispatchToProps,
@@ -12,8 +15,6 @@ import {
   Input,
   Section
 } from './index'
-import { changeUsername } from '../../ducks/home'
-import { loadRepos } from '../../ducks/global'
 
 describe('<HomeView />', () => {
   it('should render the repos list', () => {

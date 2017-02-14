@@ -18,10 +18,16 @@ const RepoListItem = ({ item, currentUser }) => {
 
   const content = (
     <div className={s.root}>
-      <a className={s.repoLink} href={item.html_url} target='_blank'>
+      <a className={s.repoLink}
+        href={item.html_url}
+        rel='noopener noreferrer'
+        target='_blank'>
         {nameprefix + item.name}
       </a>
-      <a className={s.issueLink} href={`${item.html_url}/issues`} target='_blank'>
+      <a className={s.issueLink}
+        href={`${item.html_url}/issues`}
+        rel='noopener noreferrer'
+        target='_blank'>
         <IssueIcon className={s.issueIcon} />
         <FormattedNumber value={item.open_issues_count} />
       </a>
@@ -34,8 +40,8 @@ const RepoListItem = ({ item, currentUser }) => {
 }
 
 RepoListItem.propTypes = {
-  item: PropTypes.object,
-  currentUser: PropTypes.string
+  currentUser: PropTypes.string,
+  item: PropTypes.object
 }
 
 export default connect(createStructuredSelector({

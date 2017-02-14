@@ -1,11 +1,16 @@
-const path = require('path')
+/* eslint-disable import/no-dynamic-require */
+
 const fs = require('fs')
+const path = require('path')
+
+const cheerio = require('cheerio')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
-const logger = require('../../server/logger')
-const cheerio = require('cheerio')
+
 const pkg = require(path.resolve(process.cwd(), 'package.json'))
+const logger = require('../../server/logger')
+
 const dllPlugin = pkg.dllPlugin
 
 const plugins = [

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import ToggleOption from '../ToggleOption'
+
 import s from './styles.scss'
 
 const Toggle = ({ currentValue, messages, onToggle, values }) => {
@@ -23,7 +24,7 @@ Toggle.propTypes = {
   currentValue: PropTypes.string,
   messages: PropTypes.object,
   onToggle: PropTypes.func,
-  values: PropTypes.array,
+  values: PropTypes.array
 }
 
 export default Toggle

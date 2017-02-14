@@ -70,18 +70,18 @@ export class HomeView extends PureComponent {
 }
 
 HomeView.propTypes = {
-  loading: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.bool
   ]),
+  loading: PropTypes.bool,
+  onChangeUsername: PropTypes.func,
+  onSubmitForm: PropTypes.func,
   repos: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.bool
   ]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func
+  username: PropTypes.string
 }
 
 export function mapDispatchToProps (dispatch) {

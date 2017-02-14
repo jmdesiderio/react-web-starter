@@ -20,8 +20,8 @@ const LocaleToggle = ({ locale, onLocaleToggle }) => (
 )
 
 LocaleToggle.propTypes = {
-  onLocaleToggle: PropTypes.func,
-  locale: PropTypes.string
+  locale: PropTypes.string,
+  onLocaleToggle: PropTypes.func
 }
 
 const mapStateToProps = createSelector(

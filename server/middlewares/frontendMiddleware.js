@@ -1,7 +1,11 @@
 /* eslint-disable global-require */
-const express = require('express')
+/* eslint-disable import/no-dynamic-require */
+
 const path = require('path')
+
+const express = require('express')
 const compression = require('compression')
+
 const pkg = require(path.resolve(process.cwd(), 'package.json'))
 
 // Dev middleware

@@ -3,7 +3,6 @@ import enLocaleData from 'react-intl/locale-data/en'
 import deLocaleData from 'react-intl/locale-data/de'
 
 import { DEFAULT_LOCALE } from './ducks/language'
-
 import enTranslationMessages from './translations/en.json'
 import deTranslationMessages from './translations/de.json'
 

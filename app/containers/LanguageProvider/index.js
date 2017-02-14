@@ -14,9 +14,9 @@ const LanguageProvider = ({ locale, messages, children }) => (
 )
 
 LanguageProvider.propTypes = {
+  children: PropTypes.element.isRequired,
   locale: PropTypes.string,
-  messages: PropTypes.object,
-  children: PropTypes.element.isRequired
+  messages: PropTypes.object
 }
 
 const mapStateToProps = createSelector(

@@ -4,7 +4,7 @@ import s from './styles.scss'
 
 const List = ({ component, items }) => {
   const ComponentToRender = component
-  let content = (<div></div>)
+  let content = (<div />)
 
   // If we have items, render them
   if (items) {

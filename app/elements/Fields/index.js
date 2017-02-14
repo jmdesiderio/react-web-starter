@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames/bind'
 
 import s from './styles.scss'
+
+// Bind classnames to stylesheet
 const cx = classNames.bind(s)
 
 export const FieldWrapper = ({ children, error, label, htmlFor }) => {

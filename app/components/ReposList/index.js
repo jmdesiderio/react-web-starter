@@ -25,8 +25,8 @@ const ReposList = ({ loading, error, repos }) => {
 }
 
 ReposList.propTypes = {
-  loading: PropTypes.bool,
   error: PropTypes.any,
+  loading: PropTypes.bool,
   repos: PropTypes.any
 }
 

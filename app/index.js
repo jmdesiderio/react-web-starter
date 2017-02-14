@@ -11,7 +11,6 @@ import 'sanitize.css/sanitize.css'
 import { makeSelectLocationState } from './containers/App/selectors'
 import LanguageProvider from './containers/LanguageProvider'
 import { translationMessages } from './i18n'
-
 import createRoutes from './routes'
 import configureStore from './store'
 

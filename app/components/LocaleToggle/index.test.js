@@ -3,12 +3,12 @@ import { Provider } from 'react-redux'
 import { browserHistory } from 'react-router'
 import { shallow, mount } from 'enzyme'
 
-import LocaleToggle, { mapDispatchToProps, Wrapper } from './index'
+import configureStore from '../../store'
+import { translationMessages } from '../../i18n'
 import { changeLocale } from '../../ducks/language'
 import LanguageProvider from '../../containers/LanguageProvider'
 
-import configureStore from '../../store'
-import { translationMessages } from '../../i18n'
+import LocaleToggle, { mapDispatchToProps, Wrapper } from './index'
 
 describe('<LocaleToggle />', () => {
   let store
