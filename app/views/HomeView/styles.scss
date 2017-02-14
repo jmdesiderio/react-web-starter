@@ -1,10 +1,12 @@
+@import '../../styles/variables';
+
 .atPrefix {
   color: black;
-  margin-left: .4em;
+  margin-left: .4rem;
 }
 
 .section {
-  margin: 3em auto;
+  margin: 3rem auto;
 
   &:first-child {
     margin-top: 0;
@@ -17,10 +19,10 @@
 }
 
 .form {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .input {
-  border-bottom: 1px dotted #999;
+  border-bottom: 1px dotted $aluminum;
   outline: none;
 }

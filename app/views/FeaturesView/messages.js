@@ -1,8 +1,3 @@
-/*
- * FeaturesView Messages
- *
- * This contains all the text for the FeaturesView component.
- */
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({

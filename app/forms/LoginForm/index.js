@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form/immutable';
 import { Checkbox, Input } from '../../elements/Fields';
 import { Button } from '../../elements/Buttons';
 import Errors from '../../components/Errors';
+
 import s from './styles.scss';
 
 class LoginForm extends Component {

@@ -8,12 +8,12 @@ import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../conta
 import ReposList from '../../components/ReposList';
 import { loadRepos } from '../../ducks/global';
 import { changeUsername } from '../../ducks/home';
-import { makeSelectUsername } from './selectors';
 
+import { makeSelectUsername } from './selectors';
 import messages from './messages';
 import s from './styles.scss';
 
-export class HomeView extends PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class HomeView extends PureComponent {
   componentDidMount () {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
