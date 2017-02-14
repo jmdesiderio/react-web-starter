@@ -1,10 +1,10 @@
-import { fromJS } from 'immutable';
-import { ajax } from 'rxjs/observable/dom/ajax';
+import { fromJS } from 'immutable'
+import { ajax } from 'rxjs/observable/dom/ajax'
 
 // Action Types
-export const LOAD_REPOS = 'app/global/LOAD_REPOS';
-export const LOAD_REPOS_SUCCESS = 'app/global/LOAD_REPOS_SUCCESS';
-export const LOAD_REPOS_ERROR = 'app/global/LOAD_REPOS_ERROR';
+export const LOAD_REPOS = 'app/global/LOAD_REPOS'
+export const LOAD_REPOS_SUCCESS = 'app/global/LOAD_REPOS_SUCCESS'
+export const LOAD_REPOS_ERROR = 'app/global/LOAD_REPOS_ERROR'
 
 // Initial State
 const initialState = fromJS({
@@ -14,7 +14,7 @@ const initialState = fromJS({
   userData: {
     repositories: false
   }
-});
+})
 
 // Reducer
 export default function globalReducer (state = initialState, action) {
@@ -23,18 +23,18 @@ export default function globalReducer (state = initialState, action) {
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['userData', 'repositories'], false);
+        .setIn(['userData', 'repositories'], false)
     case LOAD_REPOS_SUCCESS:
       return state
         .setIn(['userData', 'repositories'], action.payload.repos)
         .set('loading', false)
-        .set('currentUser', action.payload.username);
+        .set('currentUser', action.payload.username)
     case LOAD_REPOS_ERROR:
       return state
         .set('error', action.payload.error)
-        .set('loading', false);
+        .set('loading', false)
     default:
-      return state;
+      return state
   }
 }
 
@@ -45,7 +45,7 @@ export function loadRepos (username) {
     payload: {
       username
     }
-  };
+  }
 }
 
 export function reposLoaded (username, repos) {
@@ -55,7 +55,7 @@ export function reposLoaded (username, repos) {
       username,
       repos
     }
-  };
+  }
 }
 
 export function repoLoadingError (error) {
@@ -64,7 +64,7 @@ export function repoLoadingError (error) {
     payload: {
       error
     }
-  };
+  }
 }
 
 // Sagas
@@ -75,5 +75,5 @@ export function getReposEpic (action$) {
       ajax.getJSON(`https://api.github.com/users/${username}/repos?type=all&sort=updated`)
         .map(reposLoaded.bind(null, username))
         .catch(err => repoLoadingError(err))
-    );
+    )
 }

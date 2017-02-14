@@ -1,7 +1,7 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import React from 'react'
+import { FormattedMessage } from 'react-intl'
 
-import messages from './messages';
+import messages from './messages'
 
 const NotFound = () => (
   <article>
@@ -9,6 +9,6 @@ const NotFound = () => (
       <FormattedMessage {...messages.header} />
     </h1>
   </article>
-);
+)
 
-export default NotFound;
+export default NotFound

@@ -1,21 +1,21 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import s from './styles.scss';
+import s from './styles.scss'
 
 const renderError = (error, index) => (
   <li key={index}>
     {error}
   </li>
-);
+)
 
 const Errors = ({ list }) => (
   <ul className={s.root}>
     {list.map(renderError)}
   </ul>
-);
+)
 
 Errors.propTypes = {
   list: PropTypes.array.isRequired
-};
+}
 
-export default Errors;
+export default Errors

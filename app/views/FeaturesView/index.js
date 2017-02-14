@@ -1,13 +1,13 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { FormattedMessage } from 'react-intl'
 
-import messages from './messages';
-import s from './styles.scss';
+import messages from './messages'
+import s from './styles.scss'
 
 const FeaturesView = () => (
   <div>
-    <Helmet title="Feature Page"
+    <Helmet title='Feature Page'
       meta={[
         { name: 'description', content: 'Feature page of React.js Boilerplate application' }
       ]} />
@@ -61,6 +61,6 @@ const FeaturesView = () => (
       </li>
     </ul>
   </div>
-);
+)
 
-export default FeaturesView;
+export default FeaturesView

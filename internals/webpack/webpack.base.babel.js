@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = options => ({
   entry: options.entry,
@@ -103,4 +103,4 @@ module.exports = options => ({
   devtool: options.devtool,
   target: 'web',
   performance: options.performance || {}
-});
+})

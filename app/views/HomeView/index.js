@@ -1,36 +1,36 @@
-import React, { PureComponent, PropTypes } from 'react';
-import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import React, { PureComponent, PropTypes } from 'react'
+import Helmet from 'react-helmet'
+import { FormattedMessage } from 'react-intl'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../containers/App/selectors';
-import ReposList from '../../components/ReposList';
-import { loadRepos } from '../../ducks/global';
-import { changeUsername } from '../../ducks/home';
+import { makeSelectRepos, makeSelectLoading, makeSelectError } from '../../containers/App/selectors'
+import ReposList from '../../components/ReposList'
+import { loadRepos } from '../../ducks/global'
+import { changeUsername } from '../../ducks/home'
 
-import { makeSelectUsername } from './selectors';
-import messages from './messages';
-import s from './styles.scss';
+import { makeSelectUsername } from './selectors'
+import messages from './messages'
+import s from './styles.scss'
 
 export class HomeView extends PureComponent {
   componentDidMount () {
     if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm();
+      this.props.onSubmitForm()
     }
   }
 
   render () {
-    const { loading, error, repos } = this.props;
+    const { loading, error, repos } = this.props
     const reposListProps = {
       loading,
       error,
       repos
-    };
+    }
 
     return (
       <article>
-        <Helmet title="Home Page"
+        <Helmet title='Home Page'
           meta={[
             { name: 'description', content: 'A React.js Boilerplate application homepage' }
           ]} />
@@ -48,15 +48,15 @@ export class HomeView extends PureComponent {
               <FormattedMessage {...messages.trymeHeader} />
             </h2>
             <form className={s.form} onSubmit={this.props.onSubmitForm}>
-              <label htmlFor="username">
+              <label htmlFor='username'>
                 <FormattedMessage {...messages.trymeMessage} />
                 <span className={s.atPrefix}>
                   <FormattedMessage {...messages.trymeAtPrefix} />
                 </span>
                 <input className={s.input}
-                  id="username"
-                  type="text"
-                  placeholder="mxstbr"
+                  id='username'
+                  type='text'
+                  placeholder='mxstbr'
                   value={this.props.username}
                   onChange={this.props.onChangeUsername} />
               </label>
@@ -65,7 +65,7 @@ export class HomeView extends PureComponent {
           </section>
         </div>
       </article>
-    );
+    )
   }
 }
 
@@ -82,16 +82,16 @@ HomeView.propTypes = {
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
   onChangeUsername: PropTypes.func
-};
+}
 
 export function mapDispatchToProps (dispatch) {
   return {
     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
     onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos('jmdesiderio'));
+      if (evt !== undefined && evt.preventDefault) evt.preventDefault()
+      dispatch(loadRepos('jmdesiderio'))
     }
-  };
+  }
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -99,6 +99,6 @@ const mapStateToProps = createStructuredSelector({
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError()
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView)

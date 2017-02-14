@@ -1,4 +1,4 @@
-import { defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl'
 
 export default defineMessages({
   home: {
@@ -13,4 +13,4 @@ export default defineMessages({
     id: 'boilerplate.components.Header.login',
     defaultMessage: 'Login'
   }
-});
+})

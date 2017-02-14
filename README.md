@@ -1,15 +1,14 @@
 ## TODO:
-- align component file layout to each other in folder
+- configure eslint to standard
+- configure stylelint to scss-lint
 - organize selectors
 - Add flow types
 - Add server side rendering to express
 - implement proper redux-observable fetch calls
-- Extract css on prod build
+- Extract css on prod build/solidify prod build
+- configure optimal webpack with tree shaking
 - Optimizing code chunking
 - fix tests so that prod builds
-- configure eslint to standard
-- configure stylelint to scss-lint
-- configure optimal webpack with tree shaking
 - update all docs
 - add root relative module loading
 - try to make hot module replacement smoother

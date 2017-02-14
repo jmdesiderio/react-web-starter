@@ -1,63 +1,63 @@
-import React, { Component, PropTypes } from 'react';
-import { compose } from 'redux';
-import { Field, reduxForm } from 'redux-form/immutable';
+import React, { Component, PropTypes } from 'react'
+import { compose } from 'redux'
+import { Field, reduxForm } from 'redux-form/immutable'
 
-import { Checkbox, Input } from '../../elements/Fields';
-import { Button } from '../../elements/Buttons';
-import Errors from '../../components/Errors';
+import { Checkbox, Input } from '../../elements/Fields'
+import { Button } from '../../elements/Buttons'
+import Errors from '../../components/Errors'
 
-import s from './styles.scss';
+import s from './styles.scss'
 
 class LoginForm extends Component {
   constructor (props) {
-    super(props);
+    super(props)
 
     this.state = {
       errors: [],
-    };
+    }
 
-    this.submitHandler = this.submitHandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this)
   }
 
   submitHandler (input) {
     return this.props.sendRequest({
       variables: input
     }).then(() => {
-      console.log('success'); // eslint-disable-line no-console
+      console.log('success') // eslint-disable-line no-console
     }).catch(err => {
-      this.setState({ errors: [err.message] });
-    });
+      this.setState({ errors: [err.message] })
+    })
   }
 
   render () {
-    const { handleSubmit, invalid, pristine, submitting } = this.props;
-    const { errors } = this.state;
+    const { handleSubmit, invalid, pristine, submitting } = this.props
+    const { errors } = this.state
 
     return (
       <form onSubmit={handleSubmit(this.submitHandler)}>
         {(errors.length) ? <Errors list={errors} /> : null}
         <Field component={Input}
-          label="Username or Email"
-          id="username"
-          name="username" />
+          label='Username or Email'
+          id='username'
+          name='username' />
         <Field component={Input}
-          label="Password"
-          id="password"
-          name="password"
-          type="password" />
+          label='Password'
+          id='password'
+          name='password'
+          type='password' />
         <div className={s.row}>
           <Field component={Checkbox}
-            label="Keep me logged in"
-            name="keepLoggedIn" />
+            label='Keep me logged in'
+            name='keepLoggedIn' />
           <button className={s.forgotPassword}
             onClick={this.resetPasswordLinkHandler}>
             Forget your password?
           </button>
         </div>
         <Button disabled={invalid || pristine || submitting}
-          text="Login" />
+          text='Login' />
       </form>
-    );
+    )
   }
 }
 
@@ -67,21 +67,21 @@ LoginForm.propTypes = {
   pristine: PropTypes.bool,
   sendRequest: PropTypes.func,
   submitting: PropTypes.bool
-};
+}
 
 const validate = values => {
-  const errors = {};
+  const errors = {}
   if (!values.get('username')) {
-    errors.username = 'Username is required';
+    errors.username = 'Username is required'
   }
   if (!values.get('password')) {
-    errors.password = 'Password is required';
+    errors.password = 'Password is required'
   } else if (values.get('password').length < 8) {
-    errors.password = 'Password must be 8 or more characters';
+    errors.password = 'Password must be 8 or more characters'
   }
-  return errors;
-};
+  return errors
+}
 
 export default compose(
   reduxForm({ form: 'LoginForm', validate })
-)(LoginForm);
+)(LoginForm)

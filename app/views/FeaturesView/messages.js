@@ -1,4 +1,4 @@
-import { defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl'
 
 export default defineMessages({
   header: {
@@ -87,4 +87,4 @@ export default defineMessages({
     id: 'boilerplate.containers.FeaturesView.internationalization.message',
     defaultMessage: 'Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.'
   }
-});
+})

@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import s from './styles.scss';
+import s from './styles.scss'
 
 const ListItem = ({ item }) => (
   <li className={s.root}>
@@ -8,10 +8,10 @@ const ListItem = ({ item }) => (
       {item}
     </div>
   </li>
-);
+)
 
 ListItem.propTypes = {
   item: PropTypes.any
-};
+}
 
-export default ListItem;
+export default ListItem

@@ -1,7 +1,7 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
 
 module.exports = require('./webpack.base.babel')({
   entry: [
@@ -52,4 +52,4 @@ module.exports = require('./webpack.base.babel')({
   performance: {
     assetFilter: assetFilename => !(/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename))
   }
-});
+})

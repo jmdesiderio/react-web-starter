@@ -1,16 +1,16 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames/bind';
+import React, { PropTypes } from 'react'
+import classNames from 'classnames/bind'
 
-import s from './styles.scss';
-const cx = classNames.bind(s);
+import s from './styles.scss'
+const cx = classNames.bind(s)
 
 export const FieldWrapper = ({ children, error, label, htmlFor }) => {
   const labelElement = (label)
     ? <label className={s.label} htmlFor={htmlFor}>{label}:</label>
-    : null;
+    : null
   const errorElement = (error)
     ? <div className={s.error}>{error}</div>
-    : null;
+    : null
 
   return (
     <div className={s.fieldWrapper}>
@@ -18,20 +18,20 @@ export const FieldWrapper = ({ children, error, label, htmlFor }) => {
       {children}
       {errorElement}
     </div>
-  );
-};
+  )
+}
 FieldWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   htmlFor: PropTypes.string,
   label: PropTypes.string
-};
+}
 
 export const Input = ({ input, meta: { touched, error }, ...custom }) => {
   const className = cx({
     input: true,
     inputError: touched && error
-  });
+  })
 
   return (
     <FieldWrapper error={touched && error}
@@ -41,8 +41,8 @@ export const Input = ({ input, meta: { touched, error }, ...custom }) => {
         {...input}
         {...custom} />
     </FieldWrapper>
-  );
-};
+  )
+}
 Input.propTypes = {
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
@@ -52,24 +52,24 @@ Input.propTypes = {
   meta: PropTypes.object,
   placeholder: PropTypes.string,
   type: PropTypes.string
-};
+}
 Input.defaultProps = {
   type: 'text'
-};
+}
 
 export const Select = () => (
   <select>
     <option selected>Choose an item...</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <option value='1'>One</option>
+    <option value='2'>Two</option>
+    <option value='3'>Three</option>
   </select>
-);
+)
 
 export const Checkbox = ({ input, meta: { touched, error }, name, ...custom }) => {
   const className = cx({
     checkbox: true
-  });
+  })
 
   return (
     <FieldWrapper error={touched && error}>
@@ -83,8 +83,8 @@ export const Checkbox = ({ input, meta: { touched, error }, name, ...custom }) =
         {custom.label}
       </label>
     </FieldWrapper>
-  );
-};
+  )
+}
 Checkbox.propTypes = {
   checked: PropTypes.bool,
   className: PropTypes.string,
@@ -95,23 +95,23 @@ Checkbox.propTypes = {
   meta: PropTypes.object,
   name: PropTypes.string,
   type: PropTypes.string
-};
+}
 Checkbox.defaultProps = {
   type: 'checkbox'
-};
+}
 
 export const Radio = () => (
-  <input type="radio" />
-);
+  <input type='radio' />
+)
 
 export const Switch = () => (
-  <input type="checkbox" />
-);
+  <input type='checkbox' />
+)
 
 export const TextArea = () => (
   <textarea>Textarea input</textarea>
-);
+)
 
 export const FileUpload = () => (
-  <input type="file" />
-);
+  <input type='file' />
+)

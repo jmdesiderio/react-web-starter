@@ -1,19 +1,19 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import s from './styles.scss';
+import s from './styles.scss'
 
 const List = ({ component, items }) => {
-  const ComponentToRender = component;
-  let content = (<div></div>);
+  const ComponentToRender = component
+  let content = (<div></div>)
 
   // If we have items, render them
   if (items) {
     content = items.map((item, index) => (
       <ComponentToRender key={`item-${index}`} item={item} />
-    ));
+    ))
   } else {
     // Otherwise render a single component
-    content = (<ComponentToRender />);
+    content = (<ComponentToRender />)
   }
 
   return (
@@ -22,12 +22,12 @@ const List = ({ component, items }) => {
         {content}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 List.propTypes = {
   component: PropTypes.func.isRequired,
   items: PropTypes.array
-};
+}
 
-export default List;
+export default List

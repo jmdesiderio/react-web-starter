@@ -1,4 +1,4 @@
-import { defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl'
 
 export default defineMessages({
   startProjectHeader: {
@@ -21,4 +21,4 @@ export default defineMessages({
     id: 'boilerplate.containers.HomeView.tryme.atPrefix',
     defaultMessage: '@'
   }
-});
+})
