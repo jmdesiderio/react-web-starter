@@ -12,6 +12,11 @@
 - add root relative module loading
 - try to make hot module replacement smoother
 
+## Future:
+- comb through eslint plugins and rules
+- comb through stylelint rules
+- comb through webpack options
+
 ### Project Structure
 - `components` - react components grouped by small pieces of functionality (e.g. Header, Footer)
 - `containers` - containers used to wrap groups of components (e.g. App, Providers)

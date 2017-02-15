@@ -4,8 +4,9 @@
     "stylelint-order"
   ],
   "rules": {
-    "order/declaration-block-properties-alphabetical-order": true,
+    "color-named": "never",
     "number-leading-zero": "never",
+    "order/declaration-block-properties-alphabetical-order": true,
     "property-no-unknown": [
       true,
       {
