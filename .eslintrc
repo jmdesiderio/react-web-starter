@@ -30,6 +30,14 @@
   "rules": {
     "arrow-body-style": [2, "as-needed"],
     "arrow-parens": ["error", "as-needed"],
+    "max-len": ["error", 120],
+    "newline-per-chained-call": 2,
+    "no-confusing-arrow": ["error", { "allowParens": true }],
+    "no-unused-vars": ["error", { "vars": "all", "args": "all" }],
+    "prefer-template": 2,
+    "require-yield": "error",
+
+
     "import/no-unresolved": ["error", {
       "commonjs": true,
       "caseSensitive": true
@@ -57,6 +65,8 @@
     "import/no-dynamic-require": "error",
     "import/no-webpack-loader-syntax": "error",
     "import/no-named-default": "error",
+
+
     "jsx-a11y/anchor-has-content": ["error", { "components": [""] }],
     "jsx-a11y/aria-role": ["error", { "ignoreNonDom": false }],
     "jsx-a11y/aria-props": "error",
@@ -83,17 +93,14 @@
     "jsx-a11y/iframe-has-title": "error",
     "jsx-a11y/no-autofocus": "error",
     "jsx-a11y/no-redundant-roles": "error",
-    "max-len": ["error", 120],
-    "newline-per-chained-call": 2,
-    "no-confusing-arrow": ["error", { "allowParens": true }],
-    "prefer-template": 2,
-    "standard/object-curly-even-spacing": [2, "always"],
+
+
     "react/forbid-prop-types": ["error", { "forbid": ["any", "array", "object"] }],
     "react/jsx-closing-bracket-location": [2, "after-props"],
     "react/jsx-no-bind": ["error", {
-      "ignoreRefs": true,
       "allowArrowFunctions": true,
       "allowBind": false,
+      "ignoreRefs": true
     }],
     "react/jsx-pascal-case": ["error", {
       "allowAllCaps": true,
@@ -147,8 +154,7 @@
     "react/no-find-dom-node": "error",
     "react/no-danger-with-children": "error",
     "react/no-unused-prop-types": ["error", {
-      "customValidators": [
-      ],
+      "customValidators": [],
       "skipShapeProps": true,
     }],
     "react/style-prop-object": "error",
@@ -160,7 +166,9 @@
       "afterOpening": "never"
     }],
     "react/no-array-index-key": "error",
-    "require-yield": "error"
+
+
+    "standard/object-curly-even-spacing": [2, "always"]
   },
   "settings": {
     "import/resolver": {
