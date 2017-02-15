@@ -7,10 +7,8 @@ import s from './styles.scss'
 
 const FeaturesView = () => (
   <div>
-    <Helmet title='Feature Page'
-      meta={[
-        { name: 'description', content: 'Feature page of React.js Boilerplate application' }
-      ]} />
+    <Helmet meta={[{ name: 'description', content: 'Feature page of React.js Boilerplate application' }]}
+      title='Feature Page' />
     <h1>
       <FormattedMessage {...messages.header} />
     </h1>

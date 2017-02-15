@@ -15,10 +15,10 @@ describe('<ToggleOption />', () => {
     })
     const renderedComponent = shallow(
       <IntlProvider locale='en'>
-        <ToggleOption value='en' message={message.enMessage} />
+        <ToggleOption message={message.enMessage} value='en' />
       </IntlProvider>
     )
-    expect(renderedComponent.contains(<ToggleOption value='en' message={message.enMessage} />)).toBe(true)
+    expect(renderedComponent.contains(<ToggleOption message={message.enMessage} value='en' />)).toBe(true)
   })
 
   it('should display `value`(two letter language code) when `message` is absent', () => {

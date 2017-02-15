@@ -9,7 +9,10 @@ const ToggleOption = ({ value, message, intl }) => (
 
 ToggleOption.propTypes = {
   intl: intlShape.isRequired,
-  message: PropTypes.object,
+  message: PropTypes.shape({
+    defaultMessage: PropTypes.string,
+    id: PropTypes.string
+  }),
   value: PropTypes.string.isRequired
 }
 

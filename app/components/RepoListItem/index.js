@@ -35,13 +35,19 @@ const RepoListItem = ({ item, currentUser }) => {
   )
 
   return (
-    <ListItem key={`repo-list-item-${item.full_name}`} item={content} />
+    <ListItem item={content} key={`repo-list-item-${item.full_name}`} />
   )
 }
 
 RepoListItem.propTypes = {
   currentUser: PropTypes.string,
-  item: PropTypes.object
+  item: PropTypes.shape({
+    full_name: PropTypes.string,
+    html_url: PropTypes.string,
+    name: PropTypes.string,
+    open_issues_count: PropTypes.number,
+    owner: PropTypes.object
+  })
 }
 
 export default connect(createStructuredSelector({

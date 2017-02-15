@@ -11,9 +11,9 @@ import s from './styles.scss'
 const Header = () => (
   <div>
     <a className={s.a} href='https://twitter.com/mxstbr'>
-      <Img className={s.img}
-        src={Banner}
-        alt='react-boilerplate - Logo' />
+      <Img alt='react-boilerplate - Logo'
+        className={s.img}
+        src={Banner} />
     </a>
     <div className={s.navBar}>
       <Link className={s.link} to='/'>

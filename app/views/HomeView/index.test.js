@@ -19,18 +19,18 @@ import {
 describe('<HomeView />', () => {
   it('should render the repos list', () => {
     const renderedComponent = shallow(
-      <HomeView loading error={false} repos={[]} />
+      <HomeView error={false} loading repos={[]} />
     )
-    expect(renderedComponent.contains(<ReposList loading error={false} repos={[]} />)).toEqual(true)
+    expect(renderedComponent.contains(<ReposList error={false} loading repos={[]} />)).toEqual(true)
   })
 
   it('should render fetch the repos on mount if a username exists', () => {
     const submitSpy = jest.fn()
     mount(
       <IntlProvider locale='en'>
-        <HomeView username='Not Empty'
-          onChangeUsername={() => {}}
-          onSubmitForm={submitSpy} />
+        <HomeView onChangeUsername={() => {}}
+          onSubmitForm={submitSpy}
+          username='Not Empty' />
       </IntlProvider>
     )
     expect(submitSpy).toHaveBeenCalled()

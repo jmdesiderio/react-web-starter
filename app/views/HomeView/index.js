@@ -30,10 +30,8 @@ export class HomeView extends PureComponent {
 
     return (
       <article>
-        <Helmet title='Home Page'
-          meta={[
-            { name: 'description', content: 'A React.js Boilerplate application homepage' }
-          ]} />
+        <Helmet meta={[{ name: 'description', content: 'A React.js Boilerplate application homepage' }]}
+          title='Home Page' />
         <div>
           <section className={s.centeredSection}>
             <h2>
@@ -55,10 +53,10 @@ export class HomeView extends PureComponent {
                 </span>
                 <input className={s.input}
                   id='username'
-                  type='text'
+                  onChange={this.props.onChangeUsername}
                   placeholder='mxstbr'
-                  value={this.props.username}
-                  onChange={this.props.onChangeUsername} />
+                  type='text'
+                  value={this.props.username} />
               </label>
             </form>
             <ReposList {...reposListProps} />

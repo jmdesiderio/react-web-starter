@@ -8,14 +8,12 @@ import s from './styles.scss'
 
 const App = ({ children }) => (
   <div className={s.root}>
-    <Helmet titleTemplate='%s - React.js Boilerplate'
-      defaultTitle='React.js Boilerplate'
-      meta={[
-        {
-          name: 'description',
-          content: 'A React.js Boilerplate application'
-        }
-      ]} />
+    <Helmet defaultTitle='React.js Boilerplate'
+      meta={[{
+        name: 'description',
+        content: 'A React.js Boilerplate application'
+      }]}
+      titleTemplate='%s - React.js Boilerplate' />
     <Header />
     {React.Children.toArray(children)}
     <Footer />

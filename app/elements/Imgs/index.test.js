@@ -6,7 +6,7 @@ import { Img } from './index'
 const src = 'test.png'
 const alt = 'test'
 const renderComponent = (props = {}) => shallow(
-  <Img src={src} alt={alt} {...props} />
+  <Img alt={alt} src={src} {...props} />
 )
 
 describe('<Img />', () => {

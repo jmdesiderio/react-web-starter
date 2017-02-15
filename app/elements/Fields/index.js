@@ -37,8 +37,8 @@ export const Input = ({ input, meta: { touched, error }, ...custom }) => {
 
   return (
     <FieldWrapper error={touched && error}
-      label={custom.label}
-      htmlFor={custom.id}>
+      htmlFor={custom.id}
+      label={custom.label}>
       <input className={className}
         {...input}
         {...custom} />
@@ -49,9 +49,15 @@ Input.propTypes = {
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  input: PropTypes.object,
+  input: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
+  }),
   label: PropTypes.string,
-  meta: PropTypes.object,
+  meta: PropTypes.shape({
+    error: PropTypes.string,
+    touched: PropTypes.bool
+  }),
   placeholder: PropTypes.string,
   type: PropTypes.string
 }
@@ -92,9 +98,18 @@ Checkbox.propTypes = {
   className: PropTypes.string,
   defaultChecked: PropTypes.bool,
   id: PropTypes.string,
-  input: PropTypes.object,
+  input: PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string
+    ])
+  }),
   label: PropTypes.string,
-  meta: PropTypes.object,
+  meta: PropTypes.shape({
+    error: PropTypes.string,
+    touched: PropTypes.bool
+  }),
   name: PropTypes.string,
   type: PropTypes.string
 }

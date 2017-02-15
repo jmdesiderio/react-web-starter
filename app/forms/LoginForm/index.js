@@ -33,12 +33,12 @@ class LoginForm extends Component {
       <form onSubmit={handleSubmit(this.submitHandler)}>
         {(errors.length) ? <Errors list={errors} /> : null}
         <Field component={Input}
-          label='Username or Email'
           id='username'
+          label='Username or Email'
           name='username' />
         <Field component={Input}
-          label='Password'
           id='password'
+          label='Password'
           name='password'
           type='password' />
         <div className={s.row}>

@@ -11,7 +11,7 @@ const ListItem = ({ item }) => (
 )
 
 ListItem.propTypes = {
-  item: PropTypes.any
+  item: PropTypes.element
 }
 
 export default ListItem

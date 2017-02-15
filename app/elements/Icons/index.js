@@ -18,8 +18,8 @@ const renderIcon = {
 
 export const Icon = ({ className, type, ...props }) => (
   <svg className={classNames(s.root, className)}
-    viewBox='0 0 490 490'
     preserveAspectRatio='xMidYMid meet'
+    viewBox='0 0 490 490'
     {...props}>
     {renderIcon[type]()}
   </svg>

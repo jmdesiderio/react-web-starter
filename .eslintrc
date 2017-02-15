@@ -88,7 +88,7 @@
     "no-confusing-arrow": ["error", { "allowParens": true }],
     "prefer-template": 2,
     "standard/object-curly-even-spacing": [2, "always"],
-    "react/forbid-prop-types": ["off", { "forbid": ["any", "array", "object"] }],
+    "react/forbid-prop-types": ["error", { "forbid": ["any", "array", "object"] }],
     "react/jsx-closing-bracket-location": [2, "after-props"],
     "react/jsx-no-bind": ["error", {
       "ignoreRefs": true,
@@ -104,7 +104,7 @@
       "callbacksLast": false,
       "requiredFirst": false,
     }],
-    "react/jsx-sort-props": ["off", {
+    "react/jsx-sort-props": ["error", {
       "ignoreCase": true,
       "callbacksLast": false,
       "shorthandFirst": false,
@@ -159,7 +159,7 @@
       "beforeSelfClosing": "always",
       "afterOpening": "never"
     }],
-    "react/no-array-index-key": "off",
+    "react/no-array-index-key": "error",
     "require-yield": "error"
   },
   "settings": {

@@ -9,12 +9,12 @@ const Toggle = ({ currentValue, messages, onToggle, values }) => {
 
   if (values) {
     content = values.map(value => (
-      <ToggleOption key={value} value={value} message={messages[value]} />
+      <ToggleOption key={value} message={messages[value]} value={value} />
     ))
   }
 
   return (
-    <select className={s.root} value={currentValue} onChange={onToggle}>
+    <select className={s.root} onChange={onToggle} value={currentValue}>
       {content}
     </select>
   )
@@ -22,9 +22,9 @@ const Toggle = ({ currentValue, messages, onToggle, values }) => {
 
 Toggle.propTypes = {
   currentValue: PropTypes.string,
-  messages: PropTypes.object,
+  messages: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   onToggle: PropTypes.func,
-  values: PropTypes.array
+  values: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Toggle

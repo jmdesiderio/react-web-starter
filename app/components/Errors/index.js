@@ -15,7 +15,7 @@ const Errors = ({ list }) => (
 )
 
 Errors.propTypes = {
-  list: PropTypes.array.isRequired
+  list: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Errors

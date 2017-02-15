@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 export function Img (props) {
   return (
-    <img className={props.className} src={props.src} alt={props.alt} />
+    <img alt={props.alt} className={props.className} src={props.src} />
   )
 }
 

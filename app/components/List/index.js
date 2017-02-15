@@ -8,8 +8,8 @@ const List = ({ component, items }) => {
 
   // If we have items, render them
   if (items) {
-    content = items.map((item, index) => (
-      <ComponentToRender key={`item-${index}`} item={item} />
+    content = items.map(item => (
+      <ComponentToRender item={item} key={item.id} />
     ))
   } else {
     // Otherwise render a single component
@@ -27,7 +27,7 @@ const List = ({ component, items }) => {
 
 List.propTypes = {
   component: PropTypes.func.isRequired,
-  items: PropTypes.array
+  items: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default List

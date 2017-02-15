@@ -13,9 +13,9 @@ import s from './styles.scss'
 const LocaleToggle = ({ locale, onLocaleToggle }) => (
   <div className={s.root}>
     <Toggle currentValue={locale}
-      values={appLocales}
       messages={messages}
-      onToggle={onLocaleToggle} />
+      onToggle={onLocaleToggle}
+      values={appLocales} />
   </div>
 )
 

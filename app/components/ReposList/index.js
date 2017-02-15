@@ -18,16 +18,19 @@ const ReposList = ({ loading, error, repos }) => {
   }
 
   if (repos !== false) {
-    return <List items={repos} component={RepoListItem} />
+    return <List component={RepoListItem} items={repos} />
   }
 
   return null
 }
 
 ReposList.propTypes = {
-  error: PropTypes.any,
+  error: PropTypes.bool,
   loading: PropTypes.bool,
-  repos: PropTypes.any
+  repos: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.bool
+  ])
 }
 
 export default ReposList

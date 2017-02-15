@@ -20,9 +20,9 @@ describe('<Toggle />', () => {
     })
     const renderedComponent = shallow(
       <IntlProvider locale='en'>
-        <Toggle values={['en', 'de']} messages={messages} />
+        <Toggle messages={messages} values={['en', 'de']} />
       </IntlProvider>
     )
-    expect(renderedComponent.contains(<Toggle values={['en', 'de']} messages={messages} />)).toBe(true)
+    expect(renderedComponent.contains(<Toggle messages={messages} values={['en', 'de']} />)).toBe(true)
   })
 })

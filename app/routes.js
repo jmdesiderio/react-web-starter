@@ -1,5 +1,5 @@
-// See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
-// about the code splitting business
+/* eslint-disable react/jsx-sort-props */
+
 import React from 'react'
 import { IndexRoute, Route } from 'react-router'
 
