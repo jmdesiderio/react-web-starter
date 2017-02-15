@@ -1,5 +1,4 @@
 ## TODO:
-- configure eslint to standard
 - configure stylelint to scss-lint
 - organize selectors
 - Add flow types
