@@ -8,7 +8,8 @@
 - configure optimal webpack with tree shaking
 - Optimizing code chunking
 - fix tests so that prod builds
-- update all docs
+- add nodemon
+- update all doc
 - add root relative module loading
 - try to make hot module replacement smoother
 
