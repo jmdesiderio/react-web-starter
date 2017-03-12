@@ -6,6 +6,7 @@
 - implement proper redux-observable fetch calls
 - Extract css on prod build/solidify prod build
 - configure optimal webpack with tree shaking
+- optimize dev error messages (in browser)
 - Optimizing code chunking
 - fix tests so that prod builds
 - add nodemon
